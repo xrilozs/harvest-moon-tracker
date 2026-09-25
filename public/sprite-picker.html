@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sprite Picker</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #222; color: white; }
+    h1 { color: #4ade80; }
+    .container { position: relative; display: inline-block; margin-top: 20px; cursor: crosshair; }
+    img { image-rendering: pixelated; transform: scale(2); transform-origin: top left; }
+    .grid { 
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+      background-size: 32px 32px; /* 16px scaled by 2 */
+      background-image: linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px);
+      pointer-events: none;
+      width: 200%; height: 200%;
+    }
+    .preview { margin-top: 20px; background: #333; padding: 20px; border-radius: 8px; }
+    .code { background: #000; padding: 10px; color: #4ade80; font-family: monospace; font-size: 1.2rem; user-select: all;}
+  </style>
+</head>
+<body>
+  <h1>🌾 HM:FoMT Sprite Picker</h1>
+  <p>Klik pada item di gambar bawah ini untuk mendapatkan kode kordinatnya!</p>
+  
+  <div class="preview">
+    <h3>Hasil Klik:</h3>
+    <div class="code" id="result">Klik gambar di bawah...</div>
+    <p>Copy paste kode di atas ke file <code>src/data/ores.ts</code> atau <code>animalProducts.ts</code></p>
+  </div>
+
+  <div class="container" id="spriteContainer">
+    <img src="/img/items_spritesheet.png" id="spritesheet" alt="Spritesheet">
+    <div class="grid"></div>
+  </div>
+
+  <script>
+    const container = document.getElementById('spriteContainer');
+    const result = document.getElementById('result');
+
+    container.addEventListener('click', (e) => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Because image is scaled by 2 and grid is 16x16
+      const col = Math.floor(x / 32);
+      const row = Math.floor(y / 32);
+      
+      const realX = col * 16;
+      const realY = row * 16;
+      
+      result.innerText = `sprite:${realX}:${realY}`;
+    });
+  </script>
+</body>
+</html>
