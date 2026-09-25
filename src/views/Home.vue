@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="title">
-      <img src="https://cdn2.steamgriddb.com/logo_thumb/b71f5aaf3371c2cdfb7a7c0497f569d4.png" alt="Cow Logo" style="width: 32px; height: 32px; image-rendering: pixelated; transform: scale(1.5); margin-right: 8px; vertical-align: middle;" />
+      <img src="/fomt-icon.png" alt="Cow Logo" style="width: 32px; height: 32px; image-rendering: pixelated; transform: scale(1.5); margin-right: 8px; vertical-align: middle;" />
       Harvest Moon: FoMT
     </h1>
     <p class="subtitle">Selamat datang di Progress Tracker untuk Harvest Moon: Friends of Mineral Town!</p>

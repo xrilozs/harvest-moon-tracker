@@ -2,7 +2,7 @@
   <aside class="sidebar" :class="{ open: sidebarOpen }">
     <div class="sidebar-header">
       <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px;">
-        <img src="https://cdn2.steamgriddb.com/logo_thumb/b71f5aaf3371c2cdfb7a7c0497f569d4.png" alt="FoMT Logo" style="width: 48px; height: 48px; object-fit: contain; image-rendering: pixelated; transform: scale(1.5); margin-top: 8px; margin-bottom: 8px;" />
+        <img src="/fomt-icon.png" alt="FoMT Logo" style="width: 48px; height: 48px; object-fit: contain; image-rendering: pixelated; transform: scale(1.5); margin-top: 8px; margin-bottom: 8px;" />
         <h2 style="color: var(--primary-dark); font-weight: 800; font-size: 1.25rem;">HM: FoMT</h2>
         <p style="font-size: 0.8rem; color: var(--text-light); font-weight: 600;">Progress Tracker</p>
       </div>

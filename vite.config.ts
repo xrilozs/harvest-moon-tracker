@@ -7,7 +7,10 @@ export default defineConfig({
     vue(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico'],
+      devOptions: {
+        enabled: true
+      },
+      includeAssets: ['fomt-icon.png'],
       manifest: {
         name: 'HM: FoMT Tracker',
         short_name: 'FoMT Tracker',
@@ -17,17 +20,17 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: 'https://placehold.co/192x192/22c55e/ffffff?text=HM',
+            src: '/fomt-icon.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'https://placehold.co/512x512/22c55e/ffffff?text=HM',
+            src: '/fomt-icon.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: 'https://placehold.co/512x512/22c55e/ffffff?text=HM',
+            src: '/fomt-icon.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'
