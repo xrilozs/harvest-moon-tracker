@@ -26,12 +26,30 @@
         </div>
       </label>
     </div>
+
+    <h2 class="title" style="margin-top: 40px;">Item Pancingan Langka</h2>
+    <p class="subtitle">Barang berharga tinggi yang bisa dipancing di laut.</p>
+
+    <div class="list-container">
+      <div v-for="item in rareFishingItemsData" :key="item.id" class="card check-card" style="cursor: default;">
+        <img :src="item.image"  :alt="item.name" class="fish-img" @error="onImgError">
+        <div class="content">
+          <div class="fish-header">
+            <h3>{{ item.name }}</h3>
+            <span class="season-badge">{{ item.season }}</span>
+          </div>
+          <p><strong>📍 Lokasi:</strong> {{ item.location }}</p>
+          <p><strong>✅ Syarat:</strong> {{ item.requirement }}</p>
+          <p class="price"><strong>💰 Harga Jual:</strong> {{ item.sellPrice }} G</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { CheckIcon } from '@lucide/vue';
-import { kingFishData } from '../data/kingFish';
+import { kingFishData, rareFishingItemsData } from '../data/kingFish';
 import { useProgressStore } from '../store/progress';
 const store = useProgressStore();
 const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https://placehold.co/64x64/dbeafe/2563eb?text=Fish'; };

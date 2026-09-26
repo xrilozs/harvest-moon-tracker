@@ -40,7 +40,18 @@ import { npcGiftsData } from '../data/npcGifts';
 const search = ref('');
 const expanded = ref<string[]>([]);
 const toggle = (id: string) => { const i = expanded.value.indexOf(id); if (i > -1) expanded.value.splice(i, 1); else expanded.value.push(id); };
-const filteredNpcs = computed(() => npcGiftsData.filter(n => n.name.toLowerCase().includes(search.value.toLowerCase())));
+
+const getBdayValue = (bday: string) => {
+  const s = bday.split(' ');
+  const w = s[0].includes('Spring') ? 1 : s[0].includes('Summer') ? 2 : s[0].includes('Fall') ? 3 : s[0].includes('Winter') ? 4 : 5;
+  return w * 100 + (parseInt(s[1]) || 0);
+};
+
+const filteredNpcs = computed(() => {
+  let list = [...npcGiftsData].filter(n => n.name.toLowerCase().includes(search.value.toLowerCase()));
+  return list.sort((a, b) => getBdayValue(a.birthday) - getBdayValue(b.birthday));
+});
+
 const catClass = (cat: string) => ({ 'Most Loved': 'most-loved', 'Loved': 'loved', 'Liked': 'liked', 'Neutral': 'neutral', 'Disliked': 'disliked', 'Hated': 'hated' }[cat] || '');
 const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https://placehold.co/56x56/e2e8f0/64748b?text=NPC'; };
 </script>

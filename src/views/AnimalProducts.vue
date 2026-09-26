@@ -11,10 +11,10 @@
     </div>
 
     <div class="tabs">
-      <button v-for="type in ['Egg', 'Milk', 'Wool']" :key="type" class="tab-btn" :class="{ active: currentType === type }" @click="currentType = type">{{ type === 'Egg' ? '🥚 Telur' : type === 'Milk' ? '🥛 Susu' : '🧶 Wol' }}</button>
+      <button v-for="type in ['Egg', 'Milk', 'Wool', 'Makers']" :key="type" class="tab-btn" :class="{ active: currentType === type }" @click="currentType = type">{{ type === 'Egg' ? '🥚 Telur' : type === 'Milk' ? '🥛 Susu' : type === 'Wool' ? '🧶 Wol' : '⚙️ Mesin Maker' }}</button>
     </div>
 
-    <div class="products-list">
+    <div class="products-list" v-if="currentType !== 'Makers'">
       <div v-for="product in filteredProducts" :key="product.id" class="card product-card">
         <div class="product-header">
           
@@ -31,12 +31,26 @@
         <p class="how-to-get">{{ product.howToGet }}</p>
       </div>
     </div>
+
+    <div class="products-list" v-if="currentType === 'Makers'">
+      <div v-for="maker in makersData" :key="maker.id" class="card product-card">
+        <div class="product-header">
+          <img :src="maker.image" :alt="maker.name" class="product-img" @error="onImgError">
+          <div>
+            <h3>{{ maker.name }}</h3>
+            <span class="price-badge">Biaya: {{ maker.cost }} G</span>
+            <span class="quality-badge q-gold">Bahan: {{ maker.material }}</span>
+          </div>
+        </div>
+        <p class="how-to-get">{{ maker.description }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { animalProductsData, animalTips } from '../data/animalProducts';
+import { animalProductsData, animalTips, makersData } from '../data/animalProducts';
 const currentType = ref('Egg');
 const filteredProducts = computed(() => animalProductsData.filter(p => p.type === currentType.value));
 const qualityClass = (q: string) => ({ 'Small': 'q-small', 'Medium': 'q-medium', 'Large': 'q-large', 'Gold': 'q-gold', 'P': 'q-p', 'X': 'q-x' }[q] || '');

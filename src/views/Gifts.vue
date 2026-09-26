@@ -15,8 +15,14 @@
           </template>
           <img v-else :src="gift.image"  :alt="gift.name" class="gift-img" @error="onImgError">
         <div class="gift-content">
-          <h3>{{ gift.name }}</h3>
-          <p class="gift-source">👤 {{ gift.source }}</p>
+          <div class="gift-header">
+            <h3>{{ gift.name }}</h3>
+            <span class="source-badge">👤 {{ gift.source }}</span>
+          </div>
+          <div class="gift-meta">
+            <p class="gift-time">⏰ <strong>Waktu:</strong> {{ gift.time }}</p>
+            <p class="gift-req">✅ <strong>Syarat:</strong> {{ gift.requirement }}</p>
+          </div>
           <p class="gift-how">{{ gift.howToGet }}</p>
         </div>
       </label>
@@ -38,9 +44,13 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .gift-card:hover { border-color: var(--primary); }
 .gift-img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: #e0e7ff; flex-shrink: 0; }
 .gift-content { flex: 1; }
-.gift-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
-.gift-source { color: #4338ca; font-size: 0.85rem; margin-bottom: 4px; font-weight: 600; }
-.gift-how { color: var(--text-light); font-size: 0.9rem; }
+.gift-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.gift-header h3 { font-size: 1.1rem; font-weight: 700; }
+.source-badge { background: #e0e7ff; color: #4338ca; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+.gift-meta { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
+.gift-time { color: var(--text-light); font-size: 0.85rem; }
+.gift-req { color: #16a34a; font-size: 0.85rem; }
+.gift-how { background: #f8fafc; padding: 10px; border-radius: 8px; font-size: 0.9rem; color: var(--text-main); }
 
 .pixel-sprite {
   width: 16px;

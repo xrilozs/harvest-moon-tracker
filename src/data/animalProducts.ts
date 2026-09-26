@@ -34,6 +34,22 @@ export const animalProductsData: AnimalProduct[] = [
   { id: 'wool_x', name: 'X Wool', type: 'Wool', quality: 'X', sellPrice: 1000, howToGet: 'Domba generasi ke-2+ dengan induk P Wool dan kebahagiaan maksimum.', image: '/img/items/XWool.svg' },
 ];
 
+export interface Maker {
+  id: string;
+  name: string;
+  type: string;
+  cost: number;
+  material: string;
+  description: string;
+  image: string;
+}
+
+export const makersData: Maker[] = [
+  { id: 'm_mayonnaise', name: 'Mayonnaise Maker', type: 'Egg', cost: 20000, material: 'Adamantite', description: 'Membuat Mayonnaise dari Telur. Bawa Adamantite ke Saibara dan bayar 20.000 G. Pembuatan memakan waktu 5 hari.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Mayonnaise_Maker.png' },
+  { id: 'm_cheese', name: 'Cheese Maker', type: 'Milk', cost: 20000, material: 'Adamantite', description: 'Membuat Cheese (Keju) dari Susu. Bawa Adamantite ke Saibara dan bayar 20.000 G. Pembuatan memakan waktu 5 hari.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Cheese_Maker.png' },
+  { id: 'm_yarn', name: 'Yarn Maker', type: 'Wool', cost: 20000, material: 'Adamantite', description: 'Membuat Yarn (Benang Rajut) dari Wol. Bawa Adamantite ke Saibara dan bayar 20.000 G. Pembuatan memakan waktu 5 hari.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Yarn_Maker.png' }
+];
+
 export const animalTips = [
   'Bicara dengan hewan setiap hari untuk menaikkan kebahagiaan.',
   'Sikat sapi dan domba setiap hari menggunakan Brush.',

@@ -45,9 +45,9 @@
           <CalendarIcon :size="28" />
         </div>
         <div>
-          <h3>Events</h3>
+          <h3>Event Karakter</h3>
           <p class="stat-value">{{ store.completedEvents.length }} selesai</p>
-          <div class="mini-bar"><div class="mini-fill pink" :style="{ width: Math.min(store.completedEvents.length / 30 * 100, 100) + '%' }"></div></div>
+          <div class="mini-bar"><div class="mini-fill pink" :style="{ width: Math.min(store.completedEvents.length / 35 * 100, 100) + '%' }"></div></div>
         </div>
       </div>
 

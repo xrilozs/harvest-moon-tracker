@@ -17,3 +17,18 @@ export const kingFishData: KingFish[] = [
   { id: 'squid', name: 'Squid', location: 'Laut (Ocean)', requirement: 'Lempar satu ikan kecil (Small Fish) ke laut sebagai umpan, lalu pancing di hari yang sama.', season: 'Spring, Winter', sellPrice: 200, bait: 'Lempar Small Fish ke laut terlebih dahulu.', image: '/img/items/squid.jpg' },
   { id: 'coelacanth', name: 'Coelacanth', location: 'Danau Bawah Tanah (Winter Mine Lantai 9)', requirement: 'Pancing di kolam bawah tanah SETELAH kamu berhasil menangkap ke-5 King Fish lainnya.', season: 'Semua Musim (di dalam tambang)', sellPrice: 200, bait: 'Tidak perlu umpan khusus.', image: '/img/items/coelacanth.jpg' },
 ];
+
+export interface RareFishingItem {
+  id: string;
+  name: string;
+  location: string;
+  requirement: string;
+  season: string;
+  sellPrice: number;
+  image: string;
+}
+
+export const rareFishingItemsData: RareFishingItem[] = [
+  { id: 'f_pirate_treasure', name: 'Pirate Treasure', location: 'Laut (Ocean)', requirement: 'Pancing menggunakan Fishing Rod level Cursed, Blessed, atau Mythic.', season: 'Summer', sellPrice: 10000, image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Pirate_Treasure_(FoMT).png' },
+  { id: 'f_fish_fossil', name: 'Fish Fossil', location: 'Laut (Ocean)', requirement: 'Pancing menggunakan Fishing Rod level Cursed, Blessed, atau Mythic.', season: 'Fall', sellPrice: 5000, image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Fish_Fossil_(FoMT).png' }
+];

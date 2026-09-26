@@ -8,11 +8,7 @@
     </div>
 
     <div class="events-list">
-      <label v-for="event in filteredEvents" :key="event.id" class="card event-card">
-        <div class="checkbox-wrapper">
-          <input type="checkbox" :checked="store.completedEvents.includes(event.id)" @change="store.toggleEvent(event.id)">
-          <div class="custom-checkbox"><CheckIcon :size="16" v-if="store.completedEvents.includes(event.id)" /></div>
-        </div>
+      <div v-for="event in filteredEvents" :key="event.id" class="card event-card" style="cursor: default;">
         <div class="event-content">
           <div class="event-header">
             <h3>{{ event.name }}</h3>
@@ -27,17 +23,14 @@
             <p class="reward">🎁 <strong>Hadiah:</strong> {{ event.rewards }}</p>
           </div>
         </div>
-      </label>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { CheckIcon } from '@lucide/vue';
 import { villageEventsData } from '../data/villageEvents';
-import { useProgressStore } from '../store/progress';
-const store = useProgressStore();
 const currentSeason = ref('Spring');
 const filteredEvents = computed(() => villageEventsData.filter(e => e.season === currentSeason.value));
 </script>
@@ -47,8 +40,7 @@ const filteredEvents = computed(() => villageEventsData.filter(e => e.season ===
 .tab-btn { background: var(--surface); border: 1px solid var(--border); padding: 10px 24px; border-radius: 24px; cursor: pointer; font-weight: 600; color: var(--text-light); transition: all 0.2s; font-family: inherit; }
 .tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 .events-list { display: flex; flex-direction: column; gap: 16px; }
-.event-card { display: flex; gap: 20px; align-items: flex-start; cursor: pointer; }
-.event-card:hover { border-color: var(--primary); }
+.event-card { display: flex; gap: 20px; align-items: flex-start; }
 .event-content { flex: 1; }
 .event-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
 .event-header h3 { font-size: 1.1rem; }
@@ -58,15 +50,4 @@ const filteredEvents = computed(() => villageEventsData.filter(e => e.season ===
 .event-details { background: #f8fafc; padding: 10px 14px; border-radius: 8px; margin-bottom: 6px; }
 .bring { color: #1e40af; font-size: 0.85rem; }
 .reward { color: #15803d; font-size: 0.85rem; }
-
-.pixel-sprite {
-  width: 16px;
-  height: 16px;
-  background-image: url('/img/items_spritesheet.png');
-  background-repeat: no-repeat;
-  image-rendering: pixelated;
-  transform: scale(2.5);
-  transform-origin: center;
-  margin: 0 auto;
-}
 </style>

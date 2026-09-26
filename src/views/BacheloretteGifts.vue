@@ -4,7 +4,7 @@
     <p class="subtitle">Daftar hadiah favorit 5 bachelorette.</p>
     
     <div class="tabs">
-      <button v-for="girl in bacheloretteGiftsData" :key="girl.id" class="tab-btn" :class="{ active: currentGirl === girl.id }" @click="currentGirl = girl.id">{{ girl.name }}</button>
+      <button v-for="girl in sortedGirls" :key="girl.id" class="tab-btn" :class="{ active: currentGirl === girl.id }" @click="currentGirl = girl.id">{{ girl.name }}</button>
     </div>
 
     <div v-if="selectedGirl" class="card girl-card">
@@ -36,6 +36,17 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { bacheloretteGiftsData } from '../data/bacheloretteGifts';
+
+const getBdayValue = (bday: string) => {
+  const s = bday.split(' ');
+  const w = s[0].includes('Spring') ? 1 : s[0].includes('Summer') ? 2 : s[0].includes('Fall') ? 3 : s[0].includes('Winter') ? 4 : 5;
+  return w * 100 + (parseInt(s[1]) || 0);
+};
+
+const sortedGirls = computed(() => {
+  return [...bacheloretteGiftsData].sort((a, b) => getBdayValue(a.birthday) - getBdayValue(b.birthday));
+});
+
 const currentGirl = ref('ann');
 const selectedGirl = computed(() => bacheloretteGiftsData.find(g => g.id === currentGirl.value));
 const catClass = (cat: string) => ({ 'Most Loved': 'most-loved', 'Loved': 'loved', 'Liked': 'liked', 'Neutral': 'neutral', 'Disliked': 'disliked', 'Hated': 'hated' }[cat] || '');
