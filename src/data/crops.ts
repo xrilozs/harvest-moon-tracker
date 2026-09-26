@@ -35,5 +35,5 @@ export const cropsData: Crop[] = [
   { id: 'sweet_potato', name: 'Sweet Potato', season: 'Fall', buyPrice: 300, sellPrice: 120, growTime: 5, regrowTime: 2, recommended: true, recommendReason: 'Panen berulang setiap 2 hari! Paling menguntungkan di Fall.', image: 'https://static.wikia.nocookie.net/hmwikia/images/b/b1/Sweet_Potato_%28FoMT%29.png' },
   { id: 'spinach', name: 'Spinach', season: 'Fall', buyPrice: 200, sellPrice: 80, growTime: 5, regrowTime: null, recommended: false, image: 'https://static.wikia.nocookie.net/hmwikia/images/1/1f/Spinach_%28FoMT%29.png' },
   { id: 'green_pepper', name: 'Green Pepper', season: 'Fall', buyPrice: 150, sellPrice: 40, growTime: 7, regrowTime: 2, recommended: false, image: 'https://static.wikia.nocookie.net/hmwikia/images/5/58/Green_Pepper_%28FoMT%29.png' },
-  { id: 'magic_red_flower', name: 'Magic Red Flower', season: 'Fall', buyPrice: 600, sellPrice: 200, growTime: 9, regrowTime: null, recommended: false, image: '/img/items/MagicRedFlower.svg' },
+  { id: 'magic_red_flower', name: 'Magic Red Flower', season: 'Fall', buyPrice: 600, sellPrice: 200, growTime: 9, regrowTime: null, recommended: false, image: 'https://static.wikia.nocookie.net/hmwikia/images/3/37/Red_Magic_Grass.PNG' },
 ];

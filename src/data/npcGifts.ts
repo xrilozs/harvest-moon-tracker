@@ -14,7 +14,7 @@ export interface NpcGiftData {
 
 export const npcGiftsData: NpcGiftData[] = [
   {
-    id: 'doctor', name: 'Doctor (Trent)', role: 'Dokter di Clinic', birthday: 'Fall 17', image: '/img/items/Doctor.svg',
+    id: 'doctor', name: 'Doctor (Trent)', role: 'Dokter di Clinic', birthday: 'Fall 17', image: 'https://fogu.com/hm4/img/peeps/doctor.gif',
     gifts: [
       { category: 'Most Loved', items: ['Truffle', 'Poisonous Mushroom', 'Red Grass', 'Elli Leaves'] },
       { category: 'Loved', items: ['Apple', 'Honey', 'Wild Grape', 'Black Grass'] },
@@ -24,7 +24,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'jeff', name: 'Jeff', role: 'Pemilik Supermarket, ayah Karen', birthday: 'Winter 25', image: '/img/items/Jeff.svg',
+    id: 'jeff', name: 'Jeff', role: 'Pemilik Supermarket, ayah Karen', birthday: 'Winter 25', image: 'https://fogu.com/hm4/img/peeps/jeff.gif',
     gifts: [
       { category: 'Most Loved', items: ['Turnip', 'Flour', 'Oil'] },
       { category: 'Loved', items: ['Egg (semua)', 'Milk (semua)', 'Bread'] },
@@ -34,7 +34,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'sasha', name: 'Sasha', role: 'Istri Jeff, ibu Karen', birthday: 'Spring 30', image: '/img/items/Sasha.svg',
+    id: 'sasha', name: 'Sasha', role: 'Istri Jeff, ibu Karen', birthday: 'Spring 30', image: 'https://fogu.com/hm4/img/peeps/sasha.gif',
     gifts: [
       { category: 'Most Loved', items: ['Chocolate Cookies', 'Chocolate Cake', 'Pink Diamond'] },
       { category: 'Loved', items: ['Diamond', 'Dress', 'Perfume'] },
@@ -44,7 +44,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'doug', name: 'Doug', role: 'Pemilik Inn, ayah Ann', birthday: 'Winter 11', image: 'https://static.wikia.nocookie.net/hmwikia/images/4/47/Doug_%28MM%29.png',
+    id: 'doug', name: 'Doug', role: 'Pemilik Inn, ayah Ann', birthday: 'Winter 11', image: 'https://fogu.com/hm4/img/peeps/doug.gif',
     gifts: [
       { category: 'Most Loved', items: ['Tempura', 'Buckwheat Flour', 'Cheese Fondue'] },
       { category: 'Loved', items: ['Fish (semua)', 'Riceball', 'Wine'] },
@@ -54,7 +54,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'basil', name: 'Basil', role: 'Botanist, ayah Mary', birthday: 'Summer 11', image: 'https://static.wikia.nocookie.net/hmwikia/images/f/ff/Basil_%28MM%29.png',
+    id: 'basil', name: 'Basil', role: 'Botanist, ayah Mary', birthday: 'Summer 11', image: 'https://fogu.com/hm4/img/peeps/basil.gif',
     gifts: [
       { category: 'Most Loved', items: ['Truffle', 'Mushroom', 'Wild Grape'] },
       { category: 'Loved', items: ['Apple', 'Bamboo Shoot', 'Honey'] },
@@ -64,7 +64,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'anna', name: 'Anna', role: 'Istri Basil, ibu Mary', birthday: 'Fall 23', image: '/img/items/Anna.svg',
+    id: 'anna', name: 'Anna', role: 'Istri Basil, ibu Mary', birthday: 'Fall 23', image: 'https://fogu.com/hm4/img/peeps/anna.gif',
     gifts: [
       { category: 'Most Loved', items: ['Cake', 'Chocolate Cake', 'Jam Bun'] },
       { category: 'Loved', items: ['Flowers (semua)', 'Apple Pie', 'Honey'] },
@@ -74,7 +74,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'lillia', name: 'Lillia', role: 'Ibu Popuri & Rick, pemilik Poultry Farm', birthday: 'Spring 19', image: '/img/items/Lillia.svg',
+    id: 'lillia', name: 'Lillia', role: 'Ibu Popuri & Rick, pemilik Poultry Farm', birthday: 'Spring 19', image: 'https://fogu.com/hm4/img/peeps/lillia.gif',
     gifts: [
       { category: 'Most Loved', items: ['Toy Flower', 'Pink Cat Flower', 'Truffle'] },
       { category: 'Loved', items: ['Flowers (semua)', 'Perfume', 'Dress'] },
@@ -84,7 +84,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'rick', name: 'Rick', role: 'Kakak Popuri, bekerja di Poultry Farm', birthday: 'Fall 27', image: 'https://static.wikia.nocookie.net/hmwikia/images/d/dd/Rick.png',
+    id: 'rick', name: 'Rick', role: 'Kakak Popuri, bekerja di Poultry Farm', birthday: 'Fall 27', image: 'https://fogu.com/hm4/img/peeps/rick.gif',
     gifts: [
       { category: 'Most Loved', items: ['Chicken Feed', 'Spa-Boiled Egg', 'Honey'] },
       { category: 'Loved', items: ['Egg (semua)', 'Corn', 'Apple'] },
@@ -94,7 +94,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'cliff', name: 'Cliff', role: 'Pendatang, tinggal di Church/Inn', birthday: 'Summer 6', image: 'https://static.wikia.nocookie.net/hmwikia/images/2/22/Cliff_%28HM64%29.png',
+    id: 'cliff', name: 'Cliff', role: 'Pendatang, tinggal di Church/Inn', birthday: 'Summer 6', image: 'https://fogu.com/hm4/img/peeps/cliff.gif',
     gifts: [
       { category: 'Most Loved', items: ['Wine', 'Curry Rice', 'Tempura'] },
       { category: 'Loved', items: ['Riceball', 'Fish (semua)', 'Apple'] },
@@ -104,7 +104,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'gray', name: 'Gray', role: 'Murid pandai besi, cucu Saibara', birthday: 'Winter 6', image: 'https://static.wikia.nocookie.net/hmwikia/images/1/1d/Gray.png',
+    id: 'gray', name: 'Gray', role: 'Murid pandai besi, cucu Saibara', birthday: 'Winter 6', image: 'https://fogu.com/hm4/img/peeps/gray.gif',
     gifts: [
       { category: 'Most Loved', items: ['Orichalcum', 'Adamantite', 'Mythic Stone'] },
       { category: 'Loved', items: ['Copper Ore', 'Silver Ore', 'Gold Ore', 'Mystrile Ore'] },
@@ -114,7 +114,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'saibara', name: 'Saibara', role: 'Pandai besi (Blacksmith)', birthday: 'Spring 11', image: 'https://static.wikia.nocookie.net/hmwikia/images/3/3c/Saibara.png',
+    id: 'saibara', name: 'Saibara', role: 'Pandai besi (Blacksmith)', birthday: 'Spring 11', image: 'https://fogu.com/hm4/img/peeps/saibara.gif',
     gifts: [
       { category: 'Most Loved', items: ['Adamantite', 'Orichalcum', 'Bamboo Shoot'] },
       { category: 'Loved', items: ['Ore (semua kecuali Junk)', 'Wine', 'Tempura'] },
@@ -124,7 +124,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'carter', name: 'Carter', role: 'Pastor di Church', birthday: 'Fall 20', image: '/img/items/Carter.svg',
+    id: 'carter', name: 'Carter', role: 'Pastor di Church', birthday: 'Fall 20', image: 'https://fogu.com/hm4/img/peeps/carter.gif',
     gifts: [
       { category: 'Most Loved', items: ['Curry Rice', 'Milk (L)', 'Truffle'] },
       { category: 'Loved', items: ['Bread', 'Riceball', 'Wine'] },
@@ -134,7 +134,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'harris', name: 'Harris', role: 'Polisi desa', birthday: 'Summer 4', image: '/img/items/Harris.svg',
+    id: 'harris', name: 'Harris', role: 'Polisi desa', birthday: 'Summer 4', image: 'https://fogu.com/hm4/img/peeps/harris.gif',
     gifts: [
       { category: 'Most Loved', items: ['Wild Grape Wine', 'Cheese Fondue', 'Truffle'] },
       { category: 'Loved', items: ['Wine', 'Fish (semua)', 'Honey'] },
@@ -144,7 +144,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'barley', name: 'Barley', role: 'Pemilik Yodel Ranch', birthday: 'Spring 17', image: 'https://static.wikia.nocookie.net/hmwikia/images/d/df/Barley.png',
+    id: 'barley', name: 'Barley', role: 'Pemilik Yodel Ranch', birthday: 'Spring 17', image: 'https://fogu.com/hm4/img/peeps/barley.gif',
     gifts: [
       { category: 'Most Loved', items: ['Cheese (L)', 'Milk (L)', 'Truffle'] },
       { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape'] },
@@ -154,7 +154,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'ellen', name: 'Ellen', role: 'Nenek Elli & Stu', birthday: 'Winter 13', image: 'https://static.wikia.nocookie.net/hmwikia/images/9/95/Ellen_%28MM%29.png',
+    id: 'ellen', name: 'Ellen', role: 'Nenek Elli & Stu', birthday: 'Winter 13', image: 'https://fogu.com/hm4/img/peeps/ellen.gif',
     gifts: [
       { category: 'Most Loved', items: ['Hot Milk', 'Yarn', 'Stew'] },
       { category: 'Loved', items: ['Flowers (semua)', 'Apple', 'Honey'] },
@@ -164,7 +164,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'manna', name: 'Manna', role: 'Istri Duke, pemilik Winery', birthday: 'Fall 11', image: '/img/items/Manna.svg',
+    id: 'manna', name: 'Manna', role: 'Istri Duke, pemilik Winery', birthday: 'Fall 11', image: 'https://fogu.com/hm4/img/peeps/manna.gif',
     gifts: [
       { category: 'Most Loved', items: ['Diamond', 'Dress', 'Perfume'] },
       { category: 'Loved', items: ['Flowers (semua)', 'Honey', 'Apple'] },
@@ -174,7 +174,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'duke', name: 'Duke', role: 'Pemilik Aja Winery', birthday: 'Winter 15', image: 'https://static.wikia.nocookie.net/hmwikia/images/3/3b/Duke_%28MM%29.png',
+    id: 'duke', name: 'Duke', role: 'Pemilik Aja Winery', birthday: 'Winter 15', image: 'https://fogu.com/hm4/img/peeps/duke.gif',
     gifts: [
       { category: 'Most Loved', items: ['Tempura', 'Wine', 'Wild Grape'] },
       { category: 'Loved', items: ['Mushroom', 'Truffle', 'Fish (semua)'] },
@@ -184,7 +184,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'thomas', name: 'Mayor Thomas', role: 'Walikota Mineral Town', birthday: 'Summer 25', image: '/img/items/MayorThomas.svg',
+    id: 'thomas', name: 'Mayor Thomas', role: 'Walikota Mineral Town', birthday: 'Summer 25', image: 'https://fogu.com/hm4/img/peeps/thomas.gif',
     gifts: [
       { category: 'Most Loved', items: ['Truffle', 'Pink Diamond', 'Honey'] },
       { category: 'Loved', items: ['Wine', 'Cheese', 'Apple'] },
@@ -194,7 +194,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'zack', name: 'Zack', role: 'Pengangkut barang (Shipper)', birthday: 'Summer 29', image: 'https://static.wikia.nocookie.net/hmwikia/images/e/e1/Zack.png',
+    id: 'zack', name: 'Zack', role: 'Pengangkut barang (Shipper)', birthday: 'Summer 29', image: 'https://fogu.com/hm4/img/peeps/zack.gif',
     gifts: [
       { category: 'Most Loved', items: ['Pineapple', 'Large Fish', 'Corn'] },
       { category: 'Loved', items: ['Egg (semua)', 'Milk (semua)', 'Apple'] },
@@ -204,7 +204,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'won', name: 'Won (Huang)', role: 'Pedagang, tinggal di rumah Zack di Pantai', birthday: 'Winter 19', image: '/img/items/Won.svg',
+    id: 'won', name: 'Won (Huang)', role: 'Pedagang, tinggal di rumah Zack di Pantai', birthday: 'Winter 19', image: 'https://fogu.com/hm4/img/peeps/won.gif',
     gifts: [
       { category: 'Most Loved', items: ['Gold Ore', 'Orichalcum', 'Pink Diamond', 'Diamond', 'Adamantite'] },
       { category: 'Loved', items: ['Alexandrite', 'Emerald', 'Ruby', 'Topaz'] },
@@ -214,7 +214,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'kai', name: 'Kai', role: 'Penjual makanan musim panas di pantai', birthday: 'Summer 22', image: 'https://static.wikia.nocookie.net/hmwikia/images/2/29/Kai.png',
+    id: 'kai', name: 'Kai', role: 'Penjual makanan musim panas di pantai', birthday: 'Summer 22', image: 'https://fogu.com/hm4/img/peeps/kai.gif',
     gifts: [
       { category: 'Most Loved', items: ['Pineapple', 'Corn', 'Pizza'] },
       { category: 'Loved', items: ['Popcorn', 'Tomato', 'Onion'] },
@@ -224,7 +224,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'gotz', name: 'Gotz', role: 'Tukang kayu (Woodcutter)', birthday: 'Fall 2', image: 'https://static.wikia.nocookie.net/hmwikia/images/9/9c/Gotz.png',
+    id: 'gotz', name: 'Gotz', role: 'Tukang kayu (Woodcutter)', birthday: 'Fall 2', image: 'https://fogu.com/hm4/img/peeps/gotz.gif',
     gifts: [
       { category: 'Most Loved', items: ['Tempura', 'Mushroom Rice', 'Truffle'] },
       { category: 'Loved', items: ['Fish (semua)', 'Honey', 'Apple'] },

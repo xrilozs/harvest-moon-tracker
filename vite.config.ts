@@ -10,7 +10,7 @@ export default defineConfig({
       devOptions: {
         enabled: true
       },
-      includeAssets: ['fomt-icon.png'],
+      includeAssets: ['fomt-icon.png', 'pwa-192x192.png', 'pwa-512x512.png'],
       manifest: {
         name: 'HM: FoMT Tracker',
         short_name: 'FoMT Tracker',
@@ -20,17 +20,17 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: '/fomt-icon.png',
+            src: '/pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/fomt-icon.png',
+            src: '/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: '/fomt-icon.png',
+            src: '/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'

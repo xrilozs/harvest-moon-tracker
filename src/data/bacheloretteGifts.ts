@@ -12,7 +12,7 @@ export interface BacheloretteGiftData {
 
 export const bacheloretteGiftsData: BacheloretteGiftData[] = [
   {
-    id: 'ann', name: 'Ann', birthday: 'Summer 17', location: 'Inn (Penginapan)', personality: 'Tomboi, energik, dan pandai memasak. Anak perempuan Doug, pemilik Inn.', image: 'https://static.wikia.nocookie.net/hmwikia/images/3/30/Ann.png',
+    id: 'ann', name: 'Ann', birthday: 'Summer 17', location: 'Inn (Penginapan)', personality: 'Tomboi, energik, dan pandai memasak. Anak perempuan Doug, pemilik Inn.', image: 'https://fogu.com/hm4/img/girls/ann.gif',
     gifts: [
       { category: 'Most Loved', items: ['Spa-Boiled Egg', 'Cheese Fondue', 'Pizza', 'Truffle Rice', 'Mushroom Rice', 'Tempura'] },
       { category: 'Loved', items: ['Cheese (semua)', 'Riceball', 'Corn', 'Apple', 'Honey', 'Wild Grape', 'Bamboo Shoot'] },
@@ -23,7 +23,7 @@ export const bacheloretteGiftsData: BacheloretteGiftData[] = [
     ]
   },
   {
-    id: 'karen', name: 'Karen', birthday: 'Fall 15', location: 'Supermarket', personality: 'Mandiri, tegas, suka wine. Anak perempuan Jeff dan Sasha.', image: '/img/items/Karen.svg',
+    id: 'karen', name: 'Karen', birthday: 'Fall 15', location: 'Supermarket', personality: 'Mandiri, tegas, suka wine. Anak perempuan Jeff dan Sasha.', image: 'https://fogu.com/hm4/img/girls/karen.gif',
     gifts: [
       { category: 'Most Loved', items: ['Wine', 'Wild Grape Wine', 'Popcorn', 'French Fries', 'Pizza', 'Tempura', 'Bamboo Shoot'] },
       { category: 'Loved', items: ['Cheese Fondue', 'Sashimi', 'Sushi', 'Apple', 'Pineapple', 'Truffle'] },
@@ -34,7 +34,7 @@ export const bacheloretteGiftsData: BacheloretteGiftData[] = [
     ]
   },
   {
-    id: 'mary', name: 'Mary', birthday: 'Winter 20', location: 'Perpustakaan (Library)', personality: 'Pendiam, pemalu, suka membaca dan menulis. Anak Basil dan Anna.', image: 'https://static.wikia.nocookie.net/hmwikia/images/a/aa/Mary.png',
+    id: 'mary', name: 'Mary', birthday: 'Winter 20', location: 'Perpustakaan (Library)', personality: 'Pendiam, pemalu, suka membaca dan menulis. Anak Basil dan Anna.', image: 'https://fogu.com/hm4/img/girls/mary.gif',
     gifts: [
       { category: 'Most Loved', items: ['Relaxation Tea', 'Vegetable Juice', 'Truffle', 'Bamboo Shoot', 'Mushroom', 'Blue Grass', 'Red Grass', 'Green Grass', 'Yellow Grass'] },
       { category: 'Loved', items: ['Apple', 'Wild Grape', 'Flowers (semua)', 'Chocolate', 'Cheese Cake'] },
@@ -45,7 +45,7 @@ export const bacheloretteGiftsData: BacheloretteGiftData[] = [
     ]
   },
   {
-    id: 'elli', name: 'Elli', birthday: 'Spring 16', location: 'Clinic', personality: 'Lembut, penyayang, pekerja keras. Tinggal bersama nenek Ellen dan adik Stu.', image: '/img/items/Elli.svg',
+    id: 'elli', name: 'Elli', birthday: 'Spring 16', location: 'Clinic', personality: 'Lembut, penyayang, pekerja keras. Tinggal bersama nenek Ellen dan adik Stu.', image: 'https://fogu.com/hm4/img/girls/elli.gif',
     gifts: [
       { category: 'Most Loved', items: ['Hot Milk', 'Strawberry Milk', 'Relax Tea Leaves', 'Moon Drop Flower', 'Toy Flower', 'Pink Cat Flower'] },
       { category: 'Loved', items: ['Honey', 'Apple', 'Flowers (semua)', 'Chocolate Cake', 'Cheese Cake', 'Cookies'] },
@@ -56,7 +56,7 @@ export const bacheloretteGiftsData: BacheloretteGiftData[] = [
     ]
   },
   {
-    id: 'popuri', name: 'Popuri', birthday: 'Summer 3', location: 'Poultry Farm', personality: 'Ceria, polos, menyukai bunga dan hewan. Adik Rick, anak Lillia.', image: '/img/items/Popuri.svg',
+    id: 'popuri', name: 'Popuri', birthday: 'Summer 3', location: 'Poultry Farm', personality: 'Ceria, polos, menyukai bunga dan hewan. Adik Rick, anak Lillia.', image: 'https://fogu.com/hm4/img/girls/popuri.gif',
     gifts: [
       { category: 'Most Loved', items: ['Toy Flower', 'Pink Cat Flower', 'Moondrop Flower', 'Scrambled Eggs', 'Omelet Rice', 'Cake'] },
       { category: 'Loved', items: ['Flowers (semua)', 'Egg (semua)', 'Corn', 'Apple', 'Honey', 'Chocolate'] },

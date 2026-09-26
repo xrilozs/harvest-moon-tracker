@@ -9,27 +9,22 @@ export interface MineItem {
 }
 
 export const mineItemsData: MineItem[] = [
-  // === SPRING MINE (Tambang di dekat Hot Spring, buka sepanjang tahun) ===
-  { id: 'alexandrite', name: 'Alexandrite', mine: 'Spring Mine', floors: 'Lantai 50+', sellPrice: 10000, description: 'Batu permata langka berwarna hijau. Hadiah yang sangat disukai oleh beberapa warga.', image: '/img/items/Alexandrite.svg' },
-  { id: 'moonstone', name: 'Moon Stone', mine: 'Spring Mine', floors: 'Lantai 50+', sellPrice: 55, description: 'Batu bulan yang berkilau. Bisa dijadikan hadiah.', image: '/img/items/MoonStone.svg' },
-  { id: 'sandrose', name: 'Sand Rose', mine: 'Spring Mine', floors: 'Lantai 50+', sellPrice: 60, description: 'Bunga batu pasir yang indah. Disukai beberapa warga.', image: '/img/items/SandRose.svg' },
-  { id: 'pink_diamond', name: 'Pink Diamond', mine: 'Spring Mine', floors: 'Lantai 30+ (sangat langka)', sellPrice: 10000, description: 'Berlian pink yang sangat langka dan berharga.', image: '/img/items/PinkDiamond.svg' },
-  { id: 'diamond_spring', name: 'Diamond', mine: 'Spring Mine', floors: 'Lantai 10+', sellPrice: 100, description: 'Berlian biasa. Bisa dijual atau dijadikan hadiah.', image: '/img/items/Diamond.svg' },
-  { id: 'emerald', name: 'Emerald', mine: 'Spring Mine', floors: 'Lantai 5+', sellPrice: 80, description: 'Batu zamrud hijau. Disukai banyak warga.', image: '/img/items/Emerald.svg' },
-  { id: 'ruby', name: 'Ruby', mine: 'Spring Mine', floors: 'Lantai 5+', sellPrice: 75, description: 'Batu rubi merah. Hadiah yang bagus.', image: '/img/items/Ruby.svg' },
-  { id: 'topaz', name: 'Topaz', mine: 'Spring Mine', floors: 'Lantai 5+', sellPrice: 70, description: 'Batu topaz kuning.', image: '/img/items/Topaz.svg' },
-  { id: 'peridot', name: 'Peridot', mine: 'Spring Mine', floors: 'Lantai 5+', sellPrice: 68, description: 'Batu peridot hijau muda.', image: '/img/items/Peridot.svg' },
-  { id: 'fluorite', name: 'Fluorite', mine: 'Spring Mine', floors: 'Lantai 5+', sellPrice: 65, description: 'Batu fluorite berwarna-warni.', image: '/img/items/Fluorite.svg' },
-  { id: 'agate', name: 'Agate', mine: 'Spring Mine', floors: 'Lantai 5+', sellPrice: 62, description: 'Batu akik dengan pola unik.', image: '/img/items/Agate.svg' },
-  { id: 'amethyst', name: 'Amethyst', mine: 'Spring Mine', floors: 'Lantai 3+', sellPrice: 60, description: 'Batu kecubung ungu. Disukai banyak gadis.', image: '/img/items/Amethyst.svg' },
+  // === LAKE MINE (Hanya bisa diakses di Winter saat danau membeku) ===
+  { id: 'amethyst', name: 'Amethyst', mine: 'Lake Mine', floors: 'Semua lantai kecuali lt 50, 100, 150, 200', sellPrice: 60, description: 'Batu kecubung ungu. Ditemukan dengan menghancurkan batu.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Amethyst_(FoMT).png' },
+  { id: 'agate', name: 'Agate', mine: 'Lake Mine', floors: 'Semua lantai kecuali lt 50, 100, 150, 200', sellPrice: 62, description: 'Batu akik. Ditemukan dengan menghancurkan batu.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Agate_(FoMT).png' },
+  { id: 'fluorite', name: 'Fluorite', mine: 'Lake Mine', floors: 'Semua lantai kecuali lt 50, 100, 150, 200', sellPrice: 65, description: 'Permata fluorite. Ditemukan dengan menghancurkan batu.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Fluorite_(FoMT).png' },
+  { id: 'peridot', name: 'Peridot', mine: 'Lake Mine', floors: 'Semua lantai kecuali lt 50, 100, 150, 200', sellPrice: 68, description: 'Permata hijau kekuningan. Ditemukan dengan menghancurkan batu.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Peridot_(FoMT).png' },
+  { id: 'topaz', name: 'Topaz', mine: 'Lake Mine', floors: 'Semua lantai kecuali lt 50, 100, 150, 200', sellPrice: 70, description: 'Batu kuning topaz. Ditemukan dengan menghancurkan batu.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Topaz_(FoMT).png' },
+  { id: 'ruby', name: 'Ruby', mine: 'Lake Mine', floors: 'Semua lantai kecuali lt 50, 100, 150, 200', sellPrice: 75, description: 'Batu rubi merah menyala. Ditemukan dengan menghancurkan batu.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Ruby_(FoMT).png' },
+  { id: 'emerald', name: 'Emerald', mine: 'Lake Mine', floors: 'Lantai yang berakhiran angka 5 (5, 15, 25, dst)', sellPrice: 80, description: 'Batu zamrud hijau tua.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Emerald_(FoMT).png' },
+  { id: 'sandrose', name: 'Sand Rose', mine: 'Lake Mine', floors: 'Lantai yang berakhiran angka 9 (9, 19, 29, dst)', sellPrice: 60, description: 'Bunga batu pasir.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Sand_Rose_(FoMT).png' },
+  { id: 'moonstone', name: 'Moon Stone', mine: 'Lake Mine', floors: 'Lantai yang berakhiran angka 8 (8, 18, 28, dst)', sellPrice: 55, description: 'Batu bulan yang berkilau. Dijatuhkan di lantai dengan akhiran angka 8.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Moon_Stone_(FoMT).png' },
+  { id: 'diamond_winter', name: 'Diamond', mine: 'Lake Mine', floors: 'Lantai 10, 20, 30, 70, 90, 110, 130, 170, 190, 255', sellPrice: 100, description: 'Berlian biasa yang berharga mahal.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Diamond_(FoMT).png' },
+  { id: 'pink_diamond', name: 'Pink Diamond', mine: 'Lake Mine', floors: 'Lantai 30, 70, 90, 110, 130, 170, 190, 255', sellPrice: 10000, description: 'Berlian merah muda super langka yang harganya sangat mahal!', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Pink_Diamond_(FoMT).png' },
+  { id: 'alexandrite', name: 'Alexandrite', mine: 'Lake Mine', floors: 'Lantai 50, 100, 150, 200, 251-255', sellPrice: 10000, description: 'Batu mulia berwarna hijau. Sangat berharga dan langka.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Alexandrite_(FoMT).png' },
 
-  // === LAKE MINE / WINTER MINE (Hanya bisa diakses saat danau membeku di Winter) ===
-  { id: 'cursed_hoe', name: 'Cursed Hoe', mine: 'Lake Mine', floors: 'Lantai 39', sellPrice: 0, description: 'Cangkul terkutuk. Gunakan 255 kali untuk bisa di-bless oleh Carter.', image: '/img/items/CursedHoe.svg' },
-  { id: 'cursed_fishing_rod', name: 'Cursed Fishing Rod', mine: 'Lake Mine', floors: 'Lantai 29', sellPrice: 0, description: 'Pancing terkutuk. Gunakan 255 kali untuk bisa di-bless oleh Carter.', image: '/img/items/CursedFishingRod.svg' },
-  { id: 'cursed_axe', name: 'Cursed Axe', mine: 'Lake Mine', floors: 'Lantai 49', sellPrice: 0, description: 'Kapak terkutuk. Gunakan 255 kali untuk bisa di-bless oleh Carter.', image: '/img/items/CursedAxe.svg' },
-  { id: 'cursed_hammer', name: 'Cursed Hammer', mine: 'Lake Mine', floors: 'Lantai 59', sellPrice: 0, description: 'Palu terkutuk. Gunakan 255 kali untuk bisa di-bless oleh Carter.', image: '/img/items/CursedHammer.svg' },
-  { id: 'cursed_watering_can', name: 'Cursed Watering Can', mine: 'Lake Mine', floors: 'Lantai 69', sellPrice: 0, description: 'Penyiram terkutuk. Gunakan 255 kali untuk bisa di-bless oleh Carter.', image: '/img/items/CursedWateringCan.svg' },
-  { id: 'cursed_sickle', name: 'Cursed Sickle', mine: 'Lake Mine', floors: 'Lantai 79', sellPrice: 0, description: 'Sabit terkutuk. Gunakan 255 kali untuk bisa di-bless oleh Carter.', image: '/img/items/CursedSickle.svg' },
-  { id: 'teleport_stone', name: 'Teleport Stone', mine: 'Lake Mine', floors: 'Lantai 255', sellPrice: 0, description: 'Batu teleportasi yang memungkinkanmu langsung ke lantai tertentu. Item langka!', image: '/img/items/TeleportStone.svg' },
-  { id: 'pirate_treasure', name: 'Pirate Treasure', mine: 'Lake Mine', floors: 'Lantai 0 (acak)', sellPrice: 10000, description: 'Harta karun bajak laut yang berharga. Ditemukan secara acak saat menggali.', image: '/img/items/PirateTreasure.svg' },
+  // === SPRING MINE & SPESIAL ===
+  { id: 'black_grass', name: 'Black Grass', mine: 'Lake Mine', floors: 'Semua lantai (Gali menggunakan Hoe)', sellPrice: 10, description: 'Rumput hitam, bisa dimakan untuk sedikit stamina atau digunakan untuk resep masak.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Black_Grass_(FoMT).png' },
+  { id: 'teleport_stone', name: 'Teleport Stone', mine: 'Spring Mine', floors: 'Lantai 255', sellPrice: 0, description: 'Batu teleportasi. Muncul dari Tahun Ke-3. Gali dengan Hoe di lantai 255 Spring Mine.', image: '/img/items/teleport_stone.jpg' },
+  { id: 'french_fries_recipe', name: 'French Fries Recipe (Botol)', mine: 'Spring Mine', floors: 'Lantai 255', sellPrice: 0, description: 'Resep kentang goreng di dalam botol. Ditemukan saat memancing di dalam Spring Mine lantai 255.', image: '/img/items/French_Fries.webp' },
 ];

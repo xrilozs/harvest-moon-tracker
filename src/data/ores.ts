@@ -13,9 +13,9 @@ export const oresData: Ore[] = [
   { id: 'silver', name: 'Silver Ore', location: 'Spring Mine', floors: 'Lantai 3+', sellPrice: 20, usage: 'Upgrade alat ke level Silver. Biaya upgrade: 2.000G + 1 Silver Ore.', image: '/img/items/silver.png' },
   { id: 'gold', name: 'Gold Ore', location: 'Spring Mine', floors: 'Lantai 3+', sellPrice: 25, usage: 'Upgrade alat ke level Gold. Biaya upgrade: 3.000G + 1 Gold Ore.', image: '/img/items/gold.png' },
   { id: 'mystrile', name: 'Mystrile Ore', location: 'Spring Mine', floors: 'Lantai 5+', sellPrice: 40, usage: 'Upgrade alat ke level Mystrile. Biaya upgrade: 5.000G + 1 Mystrile Ore.', image: '/img/items/mystrile.png' },
-  { id: 'orichalcum', name: 'Orichalcum', location: 'Spring Mine', floors: 'Lantai 10+ (langka)', sellPrice: 50, usage: 'Bahan untuk perhiasan dan hadiah. Bisa dijual ke Won.', image: '/img/items/Orichalcum.svg' },
-  { id: 'adamantite', name: 'Adamantite', location: 'Spring Mine', floors: 'Lantai 10+ (langka)', sellPrice: 50, usage: 'Bahan untuk perhiasan dan hadiah. Bisa dijual ke Won.', image: '/img/items/Adamantite.svg' },
-  { id: 'mythic_stone', name: 'Mythic Stone', location: 'Lake Mine (Winter Mine)', floors: 'Lantai dalam (60+)', sellPrice: 20000, usage: 'Upgrade alat Blessed ke level Mythic. Biaya upgrade: 50.000G + 1 Mythic Stone.', image: '/img/items/MythicStone.svg' },
+  { id: 'orichalcum', name: 'Orichalcum', location: 'Spring Mine', floors: 'Lantai 10+ (langka)', sellPrice: 50, usage: 'Bahan untuk perhiasan dan hadiah. Bisa dijual ke Won.', image: 'https://static.wikia.nocookie.net/hmwikia/images/7/71/Orichalcum_Ore_%28BTN%29.png' },
+  { id: 'adamantite', name: 'Adamantite', location: 'Spring Mine', floors: 'Lantai 10+ (langka)', sellPrice: 50, usage: 'Bahan untuk perhiasan dan hadiah. Bisa dijual ke Won.', image: 'https://static.wikia.nocookie.net/hmwikia/images/2/26/Adamantite_Ore_%28BTN%29.png' },
+  { id: 'mythic_stone', name: 'Mythic Stone', location: 'Lake Mine (Winter Mine)', floors: 'Lantai dalam (60+)', sellPrice: 20000, usage: 'Upgrade alat Blessed ke level Mythic. Biaya upgrade: 50.000G + 1 Mythic Stone.', image: '/img/items/mythic_stone.jpg' },
   { id: 'junk_ore', name: 'Junk Ore', location: 'Spring Mine & Lake Mine', floors: 'Semua lantai', sellPrice: 1, usage: 'Tidak berguna. Bisa dijual atau dibuang.', image: '/img/items/junk_ore.png' },
 ];
 
