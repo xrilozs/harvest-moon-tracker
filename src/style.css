@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-:root {
+:root, [data-theme="light"] {
   --primary: #22c55e;
   --primary-dark: #16a34a;
+  --primary-light: #bbf7d0;
   --bg: #f3f4f6;
   --surface: #ffffff;
+  --surface-secondary: #f8fafc;
   --text-main: #1f2937;
   --text-light: #6b7280;
   --accent: #f59e0b;
@@ -13,6 +15,51 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  --sidebar-bg: rgba(255, 255, 255, 0.7);
+  --nav-hover: rgba(0,0,0,0.05);
+  --overlay-bg: rgba(0,0,0,0.4);
+  --badge-bg: #e0e7ff;
+  --badge-color: #4338ca;
+  --note-bg: #fef3c7;
+  --note-color: #92400e;
+  --price-bg: #dcfce7;
+  --price-color: #16a34a;
+  --reward-color: #15803d;
+  --trigger-color: #7c3aed;
+  --bring-color: #1e40af;
+  --info-bg: #f8fafc;
+}
+
+[data-theme="dark"] {
+  --primary: #4ade80;
+  --primary-dark: #22c55e;
+  --primary-light: #166534;
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-secondary: #334155;
+  --text-main: #f1f5f9;
+  --text-light: #94a3b8;
+  --accent: #fbbf24;
+  --border: #334155;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  
+  --sidebar-bg: rgba(30, 41, 59, 0.85);
+  --nav-hover: rgba(255,255,255,0.08);
+  --overlay-bg: rgba(0,0,0,0.6);
+  --badge-bg: #312e81;
+  --badge-color: #a5b4fc;
+  --note-bg: #422006;
+  --note-color: #fbbf24;
+  --price-bg: #14532d;
+  --price-color: #86efac;
+  --reward-color: #86efac;
+  --trigger-color: #a78bfa;
+  --bring-color: #93c5fd;
+  --info-bg: #334155;
 }
 
 * {
@@ -27,6 +74,7 @@ body {
   color: var(--text-main);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #app {
@@ -40,7 +88,7 @@ body {
   padding: 24px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
 .card:hover {
@@ -112,7 +160,7 @@ body {
 /* Glassmorphism sidebar */
 .sidebar {
   width: 280px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--sidebar-bg);
   backdrop-filter: blur(10px);
   border-right: 1px solid var(--border);
   padding: 24px;
@@ -122,6 +170,7 @@ body {
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  transition: background-color 0.3s ease;
 }
 
 .main-content {
@@ -145,7 +194,7 @@ body {
 }
 
 .nav-link:hover {
-  background: rgba(0,0,0,0.05);
+  background: var(--nav-hover);
   color: var(--text-main);
 }
 
@@ -153,6 +202,92 @@ body {
   background: var(--primary);
   color: white;
   box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+/* Collapsible cards */
+.collapsible-card {
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.collapsible-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.collapsible-header:hover {
+  background: var(--nav-hover);
+}
+
+.collapsible-header h2 {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.collapsible-chevron {
+  transition: transform 0.3s ease;
+  color: var(--text-light);
+}
+
+.collapsible-chevron.open {
+  transform: rotate(180deg);
+}
+
+.collapsible-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 24px;
+}
+
+.collapsible-body.open {
+  max-height: 2000px;
+  padding: 0 24px 24px;
+}
+
+/* Multi-column card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+  width: 36px;
+  height: 36px;
+}
+
+.theme-toggle:hover {
+  background: var(--nav-hover);
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {

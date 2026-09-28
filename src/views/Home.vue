@@ -8,7 +8,7 @@
     
     <div class="stats-grid">
       <div class="card stat-card">
-        <div class="icon-bg" style="background: #fef3c7; color: #f59e0b;">
+        <div class="icon-bg" style="background: var(--note-bg); color: var(--accent);">
           <AppleIcon :size="28" />
         </div>
         <div>
@@ -19,7 +19,7 @@
       </div>
       
       <div class="card stat-card">
-        <div class="icon-bg" style="background: #e0e7ff; color: #4f46e5;">
+        <div class="icon-bg" style="background: var(--badge-bg); color: var(--badge-color);">
           <GemIcon :size="28" />
         </div>
         <div>
@@ -30,7 +30,7 @@
       </div>
       
       <div class="card stat-card">
-        <div class="icon-bg" style="background: #dcfce7; color: #16a34a;">
+        <div class="icon-bg" style="background: var(--price-bg); color: var(--price-color);">
           <FishIcon :size="28" />
         </div>
         <div>
@@ -41,7 +41,7 @@
       </div>
 
       <div class="card stat-card">
-        <div class="icon-bg" style="background: #fce7f3; color: #ec4899;">
+        <div class="icon-bg pink-bg">
           <CalendarIcon :size="28" />
         </div>
         <div>
@@ -52,18 +52,18 @@
       </div>
 
       <div class="card stat-card">
-        <div class="icon-bg" style="background: #ffedd5; color: #ea580c;">
+        <div class="icon-bg orange-bg">
           <ChefHatIcon :size="28" />
         </div>
         <div>
           <h3>Resep Masakan</h3>
-          <p class="stat-value">{{ store.cookedRecipes.length }} / 108</p>
-          <div class="mini-bar"><div class="mini-fill orange" :style="{ width: (store.cookedRecipes.length / 108 * 100) + '%' }"></div></div>
+          <p class="stat-value">{{ store.cookedRecipes.length }} dimasak</p>
+          <div class="mini-bar"><div class="mini-fill orange" :style="{ width: Math.min(store.cookedRecipes.length / 60 * 100, 100) + '%' }"></div></div>
         </div>
       </div>
 
       <div class="card stat-card">
-        <div class="icon-bg" style="background: #e0e7ff; color: #4338ca;">
+        <div class="icon-bg" style="background: var(--badge-bg); color: var(--badge-color);">
           <GiftIcon :size="28" />
         </div>
         <div>
@@ -102,10 +102,15 @@ const confirmReset = () => {
 
 .stat-card { display: flex; align-items: center; gap: 16px; }
 .icon-bg { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pink-bg { background: #fce7f3; color: #ec4899; }
+.orange-bg { background: #ffedd5; color: #ea580c; }
+[data-theme="dark"] .pink-bg { background: #831843; color: #f9a8d4; }
+[data-theme="dark"] .orange-bg { background: #431407; color: #fb923c; }
+
 .stat-value { font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin: 2px 0 6px; }
 h3 { color: var(--text-light); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
 
-.mini-bar { height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; width: 120px; }
+.mini-bar { height: 6px; background: var(--surface-secondary); border-radius: 3px; overflow: hidden; width: 120px; }
 .mini-fill { height: 100%; background: var(--primary); border-radius: 3px; transition: width 0.5s ease; }
 .mini-fill.indigo { background: #4f46e5; }
 .mini-fill.green { background: #16a34a; }
@@ -133,15 +138,4 @@ h3 { color: var(--text-light); font-size: 0.75rem; text-transform: uppercase; le
   transition: background 0.2s;
 }
 .btn-danger:hover { background: #dc2626; }
-
-.pixel-sprite {
-  width: 16px;
-  height: 16px;
-  background-image: url('/img/items_spritesheet.png');
-  background-repeat: no-repeat;
-  image-rendering: pixelated;
-  transform: scale(2.5);
-  transform-origin: center;
-  margin: 0 auto;
-}
 </style>

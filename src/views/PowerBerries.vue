@@ -12,16 +12,18 @@
       </p>
     </div>
 
-    <div class="list-container">
+    <div class="card-grid">
       <label v-for="berry in powerBerriesData" :key="berry.id" class="card check-card">
-        <div class="checkbox-wrapper">
-          <input 
-            type="checkbox" 
-            :checked="store.collectedPowerBerries.includes(berry.id)"
-            @change="store.togglePowerBerry(berry.id)"
-          >
-          <div class="custom-checkbox">
-            <CheckIcon :size="16" v-if="store.collectedPowerBerries.includes(berry.id)" />
+        <div class="check-top">
+          <div class="checkbox-wrapper">
+            <input 
+              type="checkbox" 
+              :checked="store.collectedPowerBerries.includes(berry.id)"
+              @change="store.togglePowerBerry(berry.id)"
+            >
+            <div class="custom-checkbox">
+              <CheckIcon :size="16" v-if="store.collectedPowerBerries.includes(berry.id)" />
+            </div>
           </div>
         </div>
         <div class="content">
@@ -58,7 +60,7 @@ const progressPercentage = computed(() => {
 
 .progress-bar {
   height: 12px;
-  background: #e2e8f0;
+  background: var(--surface-secondary);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -70,16 +72,10 @@ const progressPercentage = computed(() => {
   transition: width 0.5s ease;
 }
 
-.list-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .check-card {
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  flex-direction: column;
+  gap: 14px;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -88,25 +84,16 @@ const progressPercentage = computed(() => {
   border-color: var(--primary);
 }
 
+.check-top { display: flex; align-items: center; gap: 14px; }
+
 .content h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   margin-bottom: 4px;
   color: var(--text-main);
 }
 
 .content p {
   color: var(--text-light);
-  font-size: 0.95rem;
-}
-
-.pixel-sprite {
-  width: 16px;
-  height: 16px;
-  background-image: url('/img/items_spritesheet.png');
-  background-repeat: no-repeat;
-  image-rendering: pixelated;
-  transform: scale(2.5);
-  transform-origin: center;
-  margin: 0 auto;
+  font-size: 0.92rem;
 }
 </style>

@@ -17,27 +17,34 @@
       <router-link to="/wild-plants" class="nav-link" @click="sidebarOpen = false"><LeafIcon :size="18" /> Tanaman Liar</router-link>
       <router-link to="/animal-products" class="nav-link" @click="sidebarOpen = false"><MilkIcon :size="18" /> Telur, Susu, Wol</router-link>
 
+      <p class="nav-section">DAPUR & RESEP</p>
+      <router-link to="/recipes" class="nav-link" @click="sidebarOpen = false"><ChefHatIcon :size="18" /> Resep Makanan</router-link>
+
       <p class="nav-section">TAMBANG & ITEM</p>
       <router-link to="/ores" class="nav-link" @click="sidebarOpen = false"><HammerIcon :size="18" /> Ore & Upgrade</router-link>
       <router-link to="/mine-items" class="nav-link" @click="sidebarOpen = false"><PickaxeIcon :size="18" /> Item Tambang</router-link>
       <router-link to="/power-berries" class="nav-link" @click="sidebarOpen = false"><AppleIcon :size="18" /> Power Berries</router-link>
       <router-link to="/jewels" class="nav-link" @click="sidebarOpen = false"><GemIcon :size="18" /> Jewels</router-link>
 
-      <p class="nav-section">MEMANCING</p>
-      <router-link to="/king-fish" class="nav-link" @click="sidebarOpen = false"><FishIcon :size="18" /> Raja Ikan</router-link>
+      <p class="nav-section">WARGA & HADIAH</p>
+      <router-link to="/villager-profiles" class="nav-link" @click="sidebarOpen = false"><UserIcon :size="18" /> Profil Warga</router-link>
+      <router-link to="/villager-schedules" class="nav-link" @click="sidebarOpen = false"><ClockIcon :size="18" /> Jadwal Warga</router-link>
+      <router-link to="/npc-gifts" class="nav-link" @click="sidebarOpen = false"><GiftIcon :size="18" /> Kesukaan Warga</router-link>
+      <router-link to="/bachelorette-gifts" class="nav-link" @click="sidebarOpen = false"><HeartHandshakeIcon :size="18" /> Kesukaan Pasangan</router-link>
+      <router-link to="/gifts" class="nav-link" @click="sidebarOpen = false"><PackageIcon :size="18" /> Hadiah</router-link>
 
       <p class="nav-section">EVENT</p>
       <router-link to="/village-events" class="nav-link" @click="sidebarOpen = false"><CalendarIcon :size="18" /> Event Desa</router-link>
       <router-link to="/npc-events" class="nav-link" @click="sidebarOpen = false"><UsersIcon :size="18" /> Event NPC</router-link>
       <router-link to="/bachelorette-events" class="nav-link" @click="sidebarOpen = false"><HeartIcon :size="18" /> Heart Events</router-link>
 
-      <p class="nav-section">WARGA & HADIAH</p>
-      <router-link to="/npc-gifts" class="nav-link" @click="sidebarOpen = false"><GiftIcon :size="18" /> Kesukaan Warga</router-link>
-      <router-link to="/bachelorette-gifts" class="nav-link" @click="sidebarOpen = false"><HeartHandshakeIcon :size="18" /> Kesukaan Pasangan</router-link>
-      <router-link to="/gifts" class="nav-link" @click="sidebarOpen = false"><PackageIcon :size="18" /> Hadiah</router-link>
+      <p class="nav-section">MEMANCING</p>
+      <router-link to="/king-fish" class="nav-link" @click="sidebarOpen = false"><FishIcon :size="18" /> Raja Ikan</router-link>
 
-      <p class="nav-section">DAPUR</p>
-      <router-link to="/recipes" class="nav-link" @click="sidebarOpen = false"><ChefHatIcon :size="18" /> Resep Makanan</router-link>
+      <p class="nav-section">PANDUAN</p>
+      <router-link to="/money-guide" class="nav-link" @click="sidebarOpen = false"><CoinsIcon :size="18" /> Tips Uang</router-link>
+      <router-link to="/cottage" class="nav-link" @click="sidebarOpen = false"><HouseIcon :size="18" /> Rumah & Cottage</router-link>
+      <router-link to="/tv-quiz" class="nav-link" @click="sidebarOpen = false"><TvIcon :size="18" /> Kuis TV</router-link>
     </nav>
   </aside>
 
@@ -45,27 +52,44 @@
     <button class="hamburger" @click="sidebarOpen = !sidebarOpen">
       <MenuIcon :size="24" />
     </button>
-    <div style="display: flex; align-items: center; gap: 12px;">
+    <div style="display: flex; align-items: center; gap: 12px; flex: 1;">
       <img src="/fomt-icon.png" alt="Logo" style="width: 24px; height: 24px; image-rendering: pixelated; transform: scale(1.5);" />
       <h2>HM: FoMT</h2>
     </div>
+    <button class="theme-toggle" @click="themeStore.toggleTheme()" :title="themeStore.isDark ? 'Mode Terang' : 'Mode Gelap'">
+      <SunIcon v-if="themeStore.isDark" :size="18" />
+      <MoonIcon v-else :size="18" />
+    </button>
   </div>
 
   <div v-if="sidebarOpen" class="overlay" @click="sidebarOpen = false"></div>
 
   <main class="main-content">
+    <div class="desktop-theme-toggle">
+      <button class="theme-toggle" @click="themeStore.toggleTheme()" :title="themeStore.isDark ? 'Mode Terang' : 'Mode Gelap'">
+        <SunIcon v-if="themeStore.isDark" :size="18" />
+        <MoonIcon v-else :size="18" />
+      </button>
+    </div>
     <router-view />
   </main>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import {
   HomeIcon, SproutIcon, LeafIcon, AppleIcon, GemIcon, FishIcon,
   CalendarIcon, UsersIcon, HeartIcon, GiftIcon, HeartHandshakeIcon,
-  PackageIcon, ChefHatIcon, HammerIcon, PickaxeIcon, MilkIcon, MenuIcon
+  PackageIcon, ChefHatIcon, HammerIcon, PickaxeIcon, MilkIcon, MenuIcon,
+  SunIcon, MoonIcon, UserIcon, ClockIcon, CoinsIcon, TvIcon, BabyIcon, HouseIcon
 } from '@lucide/vue';
+import { useThemeStore } from './store/theme';
 const sidebarOpen = ref(false);
+const themeStore = useThemeStore();
+
+onMounted(() => {
+  themeStore.initTheme();
+});
 </script>
 
 <style>
@@ -107,6 +131,7 @@ const sidebarOpen = ref(false);
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background-color 0.3s ease;
 }
 
 .mobile-header h2 {
@@ -126,8 +151,14 @@ const sidebarOpen = ref(false);
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: var(--overlay-bg);
   z-index: 199;
+}
+
+.desktop-theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 768px) {
@@ -156,6 +187,9 @@ const sidebarOpen = ref(false);
   }
   .main-content {
     padding: 20px;
+  }
+  .desktop-theme-toggle {
+    display: none;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 class="title">Event NPC (Non-Pasangan)</h1>
-    <p class="subtitle">Event penting dari karakter non-pasangan.</p>
+    <h1 class="title">Event NPC Spesial</h1>
+    <p class="subtitle">Event penting yang hanya terjadi sekali. Jangan sampai terlewat!</p>
     <div class="events-list">
       <label v-for="event in npcEventsData" :key="event.id" class="card event-card">
         <div class="checkbox-wrapper">
@@ -42,22 +42,11 @@ const store = useProgressStore();
 .event-content { flex: 1; }
 .event-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
 .event-header h3 { font-size: 1.1rem; }
-.char-badge { background: #e0e7ff; color: #4338ca; font-size: 0.8rem; padding: 4px 12px; border-radius: 10px; font-weight: 600; }
+.char-badge { background: var(--badge-bg); color: var(--badge-color); font-size: 0.8rem; padding: 4px 12px; border-radius: 10px; font-weight: 600; }
 .event-time { color: var(--text-light); font-size: 0.85rem; margin-bottom: 8px; }
 .event-desc { color: var(--text-light); font-size: 0.9rem; margin-bottom: 8px; }
-.trigger { color: #7c3aed; font-size: 0.85rem; margin-bottom: 8px; }
-.event-details { background: #f8fafc; padding: 10px 14px; border-radius: 8px; margin-bottom: 6px; }
-.bring { color: #1e40af; font-size: 0.85rem; }
-.reward { color: #15803d; font-size: 0.85rem; }
-
-.pixel-sprite {
-  width: 16px;
-  height: 16px;
-  background-image: url('/img/items_spritesheet.png');
-  background-repeat: no-repeat;
-  image-rendering: pixelated;
-  transform: scale(2.5);
-  transform-origin: center;
-  margin: 0 auto;
-}
+.trigger { color: var(--trigger-color); font-size: 0.85rem; margin-bottom: 8px; }
+.event-details { background: var(--info-bg); padding: 10px 14px; border-radius: 8px; margin-bottom: 6px; }
+.bring { color: var(--bring-color); font-size: 0.85rem; }
+.reward { color: var(--reward-color); font-size: 0.85rem; }
 </style>

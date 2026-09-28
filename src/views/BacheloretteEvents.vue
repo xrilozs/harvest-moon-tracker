@@ -52,7 +52,7 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .events-list { display: flex; flex-direction: column; gap: 16px; }
 .event-card { display: flex; gap: 20px; align-items: flex-start; cursor: pointer; }
 .event-card:hover { border-color: #ec4899; }
-.char-img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: #fce7f3; flex-shrink: 0; }
+.char-img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: var(--info-bg); flex-shrink: 0; image-rendering: pixelated; }
 .event-content { flex: 1; }
 .event-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
 .event-header h3 { font-size: 1.1rem; }
@@ -62,9 +62,9 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .heart-badge.blue { background: #2563eb; color: white; }
 .heart-badge.yellow { background: #f59e0b; color: white; }
 .event-time { color: var(--text-light); font-size: 0.85rem; margin-bottom: 6px; }
-.trigger { color: #7c3aed; font-size: 0.85rem; margin-bottom: 6px; }
+.trigger { color: var(--trigger-color); font-size: 0.85rem; margin-bottom: 6px; }
 .event-desc { color: var(--text-light); font-size: 0.9rem; margin-bottom: 6px; }
-.choices { color: #0891b2; font-size: 0.85rem; background: #ecfeff; padding: 8px 12px; border-radius: 8px; }
+.choices { color: var(--bring-color); font-size: 0.85rem; background: var(--info-bg); padding: 8px 12px; border-radius: 8px; }
 
 .pixel-sprite {
   width: 16px;

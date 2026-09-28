@@ -233,4 +233,96 @@ export const npcGiftsData: NpcGiftData[] = [
       { category: 'Hated', items: ['Weed', 'Junk Ore', 'Poisonous Mushroom'] },
     ]
   },
+  // === ANAK-ANAK ===
+  {
+    id: 'stu', name: 'Stu', role: 'Adik Elli', birthday: 'Fall 5', image: 'https://fogu.com/hm4/img/peeps/stu.gif',
+    gifts: [
+      { category: 'Most Loved', items: ['Chocolate', 'Chocolate Cake', 'Chocolate Cookies', 'Wild Grape'] },
+      { category: 'Loved', items: ['Honey', 'Apple', 'Cookies', 'Cake', 'Ice Cream'] },
+      { category: 'Liked', items: ['Egg (semua)', 'Milk (semua)', 'Flowers (semua)', 'Candy'] },
+      { category: 'Disliked', items: ['Fish (semua)', 'Junk Ore'] },
+      { category: 'Hated', items: ['Weed', 'Stone', 'Poisonous Mushroom', 'Branch'] },
+    ]
+  },
+  {
+    id: 'may', name: 'May', role: 'Cucu Barley', birthday: 'Winter 26', image: 'https://fogu.com/hm4/img/peeps/may.gif',
+    gifts: [
+      { category: 'Most Loved', items: ['Chocolate', 'Chocolate Cake', 'Honey', 'Apple'] },
+      { category: 'Loved', items: ['Cookies', 'Cake', 'Ice Cream', 'Wild Grape', 'Flowers (semua)'] },
+      { category: 'Liked', items: ['Egg (semua)', 'Milk (semua)', 'Boots'] },
+      { category: 'Disliked', items: ['Fish (semua)', 'Junk Ore'] },
+      { category: 'Hated', items: ['Weed', 'Poisonous Mushroom', 'Stone'] },
+    ]
+  },
+  // === HARVEST SPRITES ===
+  {
+    id: 'chef', name: 'Chef (Merah)', role: 'Harvest Sprite', birthday: 'Fall 14', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    gifts: [
+      { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Red Grass'] },
+      { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
+      { category: 'Liked', items: ['Egg (semua)', 'Milk (semua)', 'Bamboo Shoot'] },
+      { category: 'Disliked', items: ['Junk Ore', 'Weed'] },
+      { category: 'Hated', items: ['Poisonous Mushroom', 'Stone', 'Branch'] },
+    ]
+  },
+  {
+    id: 'bold', name: 'Bold (Ungu)', role: 'Harvest Sprite', birthday: 'Spring 4', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    gifts: [
+      { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Purple Grass'] },
+      { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
+      { category: 'Liked', items: ['Egg (semua)', 'Milk (semua)', 'Bamboo Shoot'] },
+      { category: 'Disliked', items: ['Junk Ore', 'Weed'] },
+      { category: 'Hated', items: ['Poisonous Mushroom', 'Stone', 'Branch'] },
+    ]
+  },
+  {
+    id: 'staid', name: 'Staid (Biru Tua)', role: 'Harvest Sprite', birthday: 'Spring 15', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    gifts: [
+      { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Blue Grass'] },
+      { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
+      { category: 'Liked', items: ['Egg (semua)', 'Milk (semua)', 'Bamboo Shoot'] },
+      { category: 'Disliked', items: ['Junk Ore', 'Weed'] },
+      { category: 'Hated', items: ['Poisonous Mushroom', 'Stone', 'Branch'] },
+    ]
+  },
+  {
+    id: 'aqua', name: 'Aqua (Cyan)', role: 'Harvest Sprite', birthday: 'Spring 26', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    gifts: [
+      { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Indigo Grass'] },
+      { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
+      { category: 'Liked', items: ['Egg (semua)', 'Milk (semua)', 'Bamboo Shoot'] },
+      { category: 'Disliked', items: ['Junk Ore', 'Weed'] },
+      { category: 'Hated', items: ['Poisonous Mushroom', 'Stone', 'Branch'] },
+    ]
+  },
+  {
+    id: 'timid', name: 'Timid (Hijau)', role: 'Harvest Sprite', birthday: 'Summer 16', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    gifts: [
+      { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Green Grass'] },
+      { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
+      { category: 'Liked', items: ['Egg (semua)', 'Milk (semua)', 'Bamboo Shoot'] },
+      { category: 'Disliked', items: ['Junk Ore', 'Weed'] },
+      { category: 'Hated', items: ['Poisonous Mushroom', 'Stone', 'Branch'] },
+    ]
+  },
+  {
+    id: 'hoggy', name: 'Hoggy (Kuning)', role: 'Harvest Sprite', birthday: 'Fall 10', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    gifts: [
+      { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Yellow Grass'] },
+      { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
+      { category: 'Liked', items: ['Egg (semua)', 'Milk (semua)', 'Bamboo Shoot'] },
+      { category: 'Disliked', items: ['Junk Ore', 'Weed'] },
+      { category: 'Hated', items: ['Poisonous Mushroom', 'Stone', 'Branch'] },
+    ]
+  },
+  {
+    id: 'nappy', name: 'Nappy (Orange)', role: 'Harvest Sprite', birthday: 'Winter 22', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    gifts: [
+      { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Orange Grass'] },
+      { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
+      { category: 'Liked', items: ['Egg (semua)', 'Milk (semua)', 'Bamboo Shoot'] },
+      { category: 'Disliked', items: ['Junk Ore', 'Weed'] },
+      { category: 'Hated', items: ['Poisonous Mushroom', 'Stone', 'Branch'] },
+    ]
+  }
 ];

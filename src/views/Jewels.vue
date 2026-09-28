@@ -7,17 +7,18 @@
       <button v-for="type in ['Truth', 'Goddess', 'Kappa']" :key="type" class="tab-btn" :class="{ active: currentType === type }" @click="currentType = type">{{ type }} ({{ countByType(type) }}/9)</button>
     </div>
 
-    <div class="list-container">
+    <div class="card-grid">
       <label v-for="jewel in filteredJewels" :key="jewel.id" class="card check-card">
-        <div class="checkbox-wrapper">
-          <input type="checkbox" :checked="store.collectedJewels.includes(jewel.id)" @change="store.toggleJewel(jewel.id)">
-          <div class="custom-checkbox"><CheckIcon :size="16" v-if="store.collectedJewels.includes(jewel.id)" /></div>
-        </div>
-        
+        <div class="check-top">
+          <div class="checkbox-wrapper">
+            <input type="checkbox" :checked="store.collectedJewels.includes(jewel.id)" @change="store.toggleJewel(jewel.id)">
+            <div class="custom-checkbox"><CheckIcon :size="16" v-if="store.collectedJewels.includes(jewel.id)" /></div>
+          </div>
           <template v-if="jewel.image.startsWith('sprite:')">
             <div class="pixel-sprite" :style="{ backgroundPosition: `-${jewel.image.split(':')[1]}px -${jewel.image.split(':')[2]}px` }"></div>
           </template>
-          <img v-else :src="jewel.image"  :alt="jewel.name" class="jewel-img" @error="onImgError">
+          <img v-else :src="jewel.image" :alt="jewel.name" class="jewel-img" @error="onImgError">
+        </div>
         <div class="content">
           <h3>{{ jewel.name }}</h3>
           <p><strong>Lokasi:</strong> {{ jewel.location }}</p>
@@ -44,16 +45,15 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .tabs { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
 .tab-btn { background: var(--surface); border: 1px solid var(--border); padding: 10px 24px; border-radius: 24px; cursor: pointer; font-weight: 600; color: var(--text-light); transition: all 0.2s; font-family: inherit; }
 .tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-.list-container { display: flex; flex-direction: column; gap: 16px; }
-.check-card { display: flex; align-items: center; gap: 20px; cursor: pointer; }
+.check-card { display: flex; flex-direction: column; gap: 14px; cursor: pointer; }
 .check-card:hover { border-color: var(--primary); }
+.check-top { display: flex; align-items: center; gap: 14px; }
 .jewel-img { width: 48px; height: 48px; border-radius: 8px; object-fit: cover; }
 .content h3 { font-size: 1rem; margin-bottom: 4px; color: var(--text-main); }
 .content p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 2px; }
 
 .pixel-sprite {
-  width: 16px;
-  height: 16px;
+  width: 16px; height: 16px;
   background-image: url('/img/items_spritesheet.png');
   background-repeat: no-repeat;
   image-rendering: pixelated;

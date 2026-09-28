@@ -15,6 +15,11 @@ import BacheloretteGifts from '../views/BacheloretteGifts.vue';
 import Recipes from '../views/Recipes.vue';
 import AnimalProducts from '../views/AnimalProducts.vue';
 import Gifts from '../views/Gifts.vue';
+import VillagerProfiles from '../views/VillagerProfiles.vue';
+import VillagerSchedules from '../views/VillagerSchedules.vue';
+import MoneyGuide from '../views/MoneyGuide.vue';
+import TvQuiz from '../views/TvQuiz.vue';
+import Cottage from '../views/Cottage.vue';
 
 const routes = [
   { path: '/', component: Home },
@@ -33,6 +38,11 @@ const routes = [
   { path: '/recipes', component: Recipes },
   { path: '/animal-products', component: AnimalProducts },
   { path: '/gifts', component: Gifts },
+  { path: '/villager-profiles', component: VillagerProfiles },
+  { path: '/villager-schedules', component: VillagerSchedules },
+  { path: '/money-guide', component: MoneyGuide },
+  { path: '/tv-quiz', component: TvQuiz },
+  { path: '/cottage', component: Cottage },
 ];
 
 export const router = createRouter({

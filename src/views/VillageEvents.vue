@@ -44,10 +44,10 @@ const filteredEvents = computed(() => villageEventsData.filter(e => e.season ===
 .event-content { flex: 1; }
 .event-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
 .event-header h3 { font-size: 1.1rem; }
-.date-badge { background: #fef3c7; color: #d97706; font-size: 0.8rem; padding: 4px 12px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
+.date-badge { background: var(--note-bg); color: var(--note-color); font-size: 0.8rem; padding: 4px 12px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
 .event-time { color: var(--text-light); font-size: 0.85rem; margin-bottom: 8px; }
 .event-desc { color: var(--text-light); font-size: 0.9rem; margin-bottom: 10px; }
-.event-details { background: #f8fafc; padding: 10px 14px; border-radius: 8px; margin-bottom: 6px; }
-.bring { color: #1e40af; font-size: 0.85rem; }
-.reward { color: #15803d; font-size: 0.85rem; }
+.event-details { background: var(--info-bg); padding: 10px 14px; border-radius: 8px; margin-bottom: 6px; }
+.bring { color: var(--bring-color); font-size: 0.85rem; }
+.reward { color: var(--reward-color); font-size: 0.85rem; }
 </style>

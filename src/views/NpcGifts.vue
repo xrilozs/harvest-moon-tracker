@@ -58,12 +58,12 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 
 <style scoped>
 .search-box { margin-bottom: 24px; }
-.search-input { width: 100%; max-width: 400px; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border); font-size: 1rem; font-family: inherit; background: var(--surface); }
+.search-input { width: 100%; max-width: 400px; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border); font-size: 1rem; font-family: inherit; background: var(--surface); color: var(--text-main); }
 .search-input:focus { outline: none; border-color: var(--primary); }
-.npc-list { display: flex; flex-direction: column; gap: 16px; }
-.npc-card { cursor: pointer; }
+.npc-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; align-items: start; }
+.npc-card { cursor: pointer; display: flex; flex-direction: column; }
 .npc-header { display: flex; align-items: center; gap: 16px; }
-.npc-img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: #f1f5f9; flex-shrink: 0; }
+.npc-img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: var(--info-bg); flex-shrink: 0; image-rendering: pixelated; }
 .npc-header h3 { font-size: 1.1rem; font-weight: 700; }
 .npc-role { color: var(--text-light); font-size: 0.85rem; }
 .npc-bday { color: var(--text-light); font-size: 0.8rem; }
