@@ -74,7 +74,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'lillia', name: 'Lillia', role: 'Ibu Popuri & Rick, pemilik Poultry Farm', birthday: 'Spring 19', image: 'https://fogu.com/hm4/img/peeps/lillia.gif',
+    id: 'lillia', name: 'Lillia', role: 'Ibu Popuri & Rick, pemilik Poultry Farm', birthday: 'Spring 19', image: 'https://static.wikia.nocookie.net/hmwikia/images/b/b5/Lillia_FoMT.png',
     gifts: [
       { category: 'Most Loved', items: ['Toy Flower', 'Pink Cat Flower', 'Truffle'] },
       { category: 'Loved', items: ['Flowers (semua)', 'Perfume', 'Dress'] },
@@ -94,7 +94,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'cliff', name: 'Cliff', role: 'Pendatang, tinggal di Church/Inn', birthday: 'Summer 6', image: 'https://fogu.com/hm4/img/peeps/cliff.gif',
+    id: 'cliff', name: 'Cliff', role: 'Pendatang, tinggal di Church/Inn', birthday: 'Summer 6', image: 'https://static.wikia.nocookie.net/hmwikia/images/e/e6/Cliff_and_Cain.jpeg',
     gifts: [
       { category: 'Most Loved', items: ['Wine', 'Curry Rice', 'Tempura'] },
       { category: 'Loved', items: ['Riceball', 'Fish (semua)', 'Apple'] },
@@ -256,7 +256,7 @@ export const npcGiftsData: NpcGiftData[] = [
   },
   // === HARVEST SPRITES ===
   {
-    id: 'chef', name: 'Chef (Merah)', role: 'Harvest Sprite', birthday: 'Fall 14', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    id: 'chef', name: 'Chef (Merah)', role: 'Harvest Sprite', birthday: 'Fall 14', image: 'https://static.wikia.nocookie.net/hmwikia/images/d/d1/Th_Chef.png',
     gifts: [
       { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Red Grass'] },
       { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
@@ -266,7 +266,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'bold', name: 'Bold (Ungu)', role: 'Harvest Sprite', birthday: 'Spring 4', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    id: 'bold', name: 'Bold (Ungu)', role: 'Harvest Sprite', birthday: 'Spring 4', image: 'https://static.wikia.nocookie.net/hmwikia/images/9/94/Th_Bold.png',
     gifts: [
       { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Purple Grass'] },
       { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
@@ -276,7 +276,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'staid', name: 'Staid (Biru Tua)', role: 'Harvest Sprite', birthday: 'Spring 15', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    id: 'staid', name: 'Staid (Biru Tua)', role: 'Harvest Sprite', birthday: 'Spring 15', image: 'https://static.wikia.nocookie.net/hmwikia/images/5/5d/Th_Staid.png',
     gifts: [
       { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Blue Grass'] },
       { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
@@ -286,7 +286,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'aqua', name: 'Aqua (Cyan)', role: 'Harvest Sprite', birthday: 'Spring 26', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    id: 'aqua', name: 'Aqua (Cyan)', role: 'Harvest Sprite', birthday: 'Spring 26', image: 'https://static.wikia.nocookie.net/hmwikia/images/6/67/Th_Aqua.png',
     gifts: [
       { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Indigo Grass'] },
       { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
@@ -296,7 +296,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'timid', name: 'Timid (Hijau)', role: 'Harvest Sprite', birthday: 'Summer 16', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    id: 'timid', name: 'Timid (Hijau)', role: 'Harvest Sprite', birthday: 'Summer 16', image: 'https://static.wikia.nocookie.net/hmwikia/images/c/c4/Th_Timid.png',
     gifts: [
       { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Green Grass'] },
       { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
@@ -306,7 +306,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'hoggy', name: 'Hoggy (Kuning)', role: 'Harvest Sprite', birthday: 'Fall 10', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    id: 'hoggy', name: 'Hoggy (Kuning)', role: 'Harvest Sprite', birthday: 'Fall 10', image: 'https://static.wikia.nocookie.net/hmwikia/images/7/7e/Th_Hoggy.png',
     gifts: [
       { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Yellow Grass'] },
       { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },
@@ -316,7 +316,7 @@ export const npcGiftsData: NpcGiftData[] = [
     ]
   },
   {
-    id: 'nappy', name: 'Nappy (Orange)', role: 'Harvest Sprite', birthday: 'Winter 22', image: 'https://fogu.com/hm4/img/peeps/sprite.gif',
+    id: 'nappy', name: 'Nappy (Orange)', role: 'Harvest Sprite', birthday: 'Winter 22', image: 'https://static.wikia.nocookie.net/hmwikia/images/b/bb/Th_Nappy.png',
     gifts: [
       { category: 'Most Loved', items: ['Flour', 'Bread', 'Riceball', 'Orange Grass'] },
       { category: 'Loved', items: ['Honey', 'Apple', 'Wild Grape', 'Mushroom'] },

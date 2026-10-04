@@ -15,15 +15,16 @@
       <p class="nav-section">PERTANIAN</p>
       <router-link to="/crops" class="nav-link" @click="sidebarOpen = false"><SproutIcon :size="18" /> Tanaman Kebun</router-link>
       <router-link to="/wild-plants" class="nav-link" @click="sidebarOpen = false"><LeafIcon :size="18" /> Tanaman Liar</router-link>
-      <router-link to="/animal-products" class="nav-link" @click="sidebarOpen = false"><MilkIcon :size="18" /> Telur, Susu, Wol</router-link>
+      <router-link to="/animal-products" class="nav-link" @click="sidebarOpen = false"><MilkIcon :size="18" /> Peternakan</router-link>
 
       <p class="nav-section">DAPUR & RESEP</p>
       <router-link to="/recipes" class="nav-link" @click="sidebarOpen = false"><ChefHatIcon :size="18" /> Resep Makanan</router-link>
 
-      <p class="nav-section">TAMBANG & ITEM</p>
-      <router-link to="/ores" class="nav-link" @click="sidebarOpen = false"><HammerIcon :size="18" /> Ore & Upgrade</router-link>
-      <router-link to="/mine-items" class="nav-link" @click="sidebarOpen = false"><PickaxeIcon :size="18" /> Item Tambang</router-link>
+      <p class="nav-section">POWER BERRY</p>
       <router-link to="/power-berries" class="nav-link" @click="sidebarOpen = false"><AppleIcon :size="18" /> Power Berries</router-link>
+
+      <p class="nav-section">TAMBANG & JEWEL</p>
+      <router-link to="/ores" class="nav-link" @click="sidebarOpen = false"><HammerIcon :size="18" /> Ores, Gems, Stones, dan Cursed Tools</router-link>
       <router-link to="/jewels" class="nav-link" @click="sidebarOpen = false"><GemIcon :size="18" /> Jewels</router-link>
 
       <p class="nav-section">WARGA & HADIAH</p>
@@ -41,10 +42,11 @@
       <p class="nav-section">MEMANCING</p>
       <router-link to="/king-fish" class="nav-link" @click="sidebarOpen = false"><FishIcon :size="18" /> Raja Ikan</router-link>
 
-      <p class="nav-section">PANDUAN</p>
+      <p class="nav-section">PANDUAN & LAINNYA</p>
       <router-link to="/money-guide" class="nav-link" @click="sidebarOpen = false"><CoinsIcon :size="18" /> Tips Uang</router-link>
       <router-link to="/cottage" class="nav-link" @click="sidebarOpen = false"><HouseIcon :size="18" /> Rumah & Cottage</router-link>
       <router-link to="/tv-quiz" class="nav-link" @click="sidebarOpen = false"><TvIcon :size="18" /> Kuis TV</router-link>
+      <router-link to="/special-items" class="nav-link" @click="sidebarOpen = false"><StarIcon :size="18" /> Special Items</router-link>
     </nav>
   </aside>
 
@@ -65,8 +67,9 @@
   <div v-if="sidebarOpen" class="overlay" @click="sidebarOpen = false"></div>
 
   <main class="main-content">
-    <div class="desktop-theme-toggle">
-      <button class="theme-toggle" @click="themeStore.toggleTheme()" :title="themeStore.isDark ? 'Mode Terang' : 'Mode Gelap'">
+    <div class="top-bar" style="margin-bottom: 50px;">
+      <GlobalSearch style="flex: 1; max-width: 500px;" />
+      <button class="theme-toggle desktop-only" @click="themeStore.toggleTheme()" :title="themeStore.isDark ? 'Mode Terang' : 'Mode Gelap'">
         <SunIcon v-if="themeStore.isDark" :size="18" />
         <MoonIcon v-else :size="18" />
       </button>
@@ -81,9 +84,11 @@ import {
   HomeIcon, SproutIcon, LeafIcon, AppleIcon, GemIcon, FishIcon,
   CalendarIcon, UsersIcon, HeartIcon, GiftIcon, HeartHandshakeIcon,
   PackageIcon, ChefHatIcon, HammerIcon, PickaxeIcon, MilkIcon, MenuIcon,
-  SunIcon, MoonIcon, UserIcon, ClockIcon, CoinsIcon, TvIcon, BabyIcon, HouseIcon
+  SunIcon, MoonIcon, UserIcon, ClockIcon, CoinsIcon, TvIcon, BabyIcon, HouseIcon, StarIcon
 } from '@lucide/vue';
 import { useThemeStore } from './store/theme';
+import GlobalSearch from './components/GlobalSearch.vue';
+
 const sidebarOpen = ref(false);
 const themeStore = useThemeStore();
 
@@ -155,10 +160,16 @@ onMounted(() => {
   z-index: 199;
 }
 
-.desktop-theme-toggle {
+.top-bar {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.desktop-only {
+  display: flex;
 }
 
 @media (max-width: 768px) {
@@ -188,8 +199,11 @@ onMounted(() => {
   .main-content {
     padding: 20px;
   }
-  .desktop-theme-toggle {
+  .desktop-only {
     display: none;
+  }
+  .top-bar {
+    margin-bottom: 16px;
   }
 }
 </style>

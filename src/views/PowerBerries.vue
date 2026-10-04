@@ -24,6 +24,7 @@
             <div class="custom-checkbox">
               <CheckIcon :size="16" v-if="store.collectedPowerBerries.includes(berry.id)" />
             </div>
+          <img src="/img/items/power_berry.png" alt="power berry" class="jewel-img">
           </div>
         </div>
         <div class="content">

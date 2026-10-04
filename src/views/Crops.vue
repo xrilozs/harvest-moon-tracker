@@ -21,14 +21,16 @@
           </div>
         </div>
         
-        <p v-if="crop.recommendReason" class="recommend-reason">{{ crop.recommendReason }}</p>
-
         <div class="crop-details">
           <div class="detail-item"><span class="label">Harga Beli:</span><span class="value">{{ crop.buyPrice }} G</span></div>
-          <div class="detail-item"><span class="label">Harga Jual:</span><span class="value sell">{{ crop.sellPrice }} G</span></div>
+          <div class="detail-item" v-if="crop.sellPrice"><span class="label">Harga Jual:</span><span class="value sell">{{ crop.sellPrice }} G</span></div>
+          <div class="detail-item" v-else><span class="label">Harga Jual:</span><span class="value sell">-</span></div>
           <div class="detail-item"><span class="label">Waktu Panen:</span><span class="value">{{ crop.growTime }} Hari</span></div>
           <div class="detail-item" v-if="crop.regrowTime"><span class="label">Tumbuh Kembali:</span><span class="value regrow">{{ crop.regrowTime }} Hari ♻️</span></div>
+          <div class="detail-item" v-else><span class="label">Tumbuh Kembali:</span><span class="value regrow">-</span></div>
         </div>
+
+        <p v-if="crop.recommendReason" class="recommend-reason">{{ crop.recommendReason }}</p>
       </div>
     </div>
   </div>
@@ -49,15 +51,15 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .crops-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
 .crop-card { display: flex; flex-direction: column; gap: 12px; }
 .crop-header { display: flex; align-items: center; gap: 16px; }
-.crop-img { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; background: #f1f5f9; }
+.crop-img { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; background: var(--badge-bg); }
 .crop-name { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
-.badge { background: #fef3c7; color: #d97706; font-size: 0.75rem; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
-.recommend-reason { color: #15803d; font-size: 0.85rem; background: #f0fdf4; padding: 8px 12px; border-radius: 8px; }
-.crop-details { background: #f8fafc; padding: 14px; border-radius: 12px; display: flex; flex-direction: column; gap: 6px; }
+.badge { background: var(--note-bg); color: var(--note-color); font-size: 0.75rem; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
+.recommend-reason { color: var(--reward-color); font-size: 0.85rem; background: var(--price-bg); padding: 8px 12px; border-radius: 8px; }
+.crop-details { background: var(--info-bg); padding: 14px; border-radius: 12px; display: flex; flex-direction: column; gap: 6px; }
 .detail-item { display: flex; justify-content: space-between; font-size: 0.9rem; }
 .detail-item .label { color: var(--text-light); }
 .detail-item .value { font-weight: 600; color: var(--text-main); }
-.detail-item .sell { color: #16a34a; }
+.detail-item .sell { color: var(--price-color); }
 .detail-item .regrow { color: #0891b2; }
 
 .pixel-sprite {

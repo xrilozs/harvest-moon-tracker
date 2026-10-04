@@ -4,7 +4,7 @@
     <p class="subtitle">Item yang bisa dipetik langsung dari alam berdasarkan musim.</p>
     
     <div class="tabs">
-      <button v-for="season in ['Spring', 'Summer', 'Fall']" :key="season" class="tab-btn" :class="{ active: currentSeason === season }" @click="currentSeason = season">{{ season }}</button>
+      <button v-for="season in ['Spring', 'Summer', 'Fall', 'Winter']" :key="season" class="tab-btn" :class="{ active: currentSeason === season }" @click="currentSeason = season">{{ season }}</button>
     </div>
 
     <div class="items-grid">
@@ -17,7 +17,8 @@
           <img v-else :src="plant.image"  :alt="plant.name" class="item-img" @error="onImgError">
           <div>
             <h3 class="item-name">{{ plant.name }}</h3>
-            <span class="price-badge">{{ plant.sellPrice }} G</span>
+            <span class="price-badge" v-if="plant.sellPrice">{{ plant.sellPrice }} G</span>
+            <span class="price-badge" v-else>-</span>
           </div>
         </div>
         <p class="item-location"><strong>Lokasi:</strong> {{ plant.location }}</p>
@@ -41,9 +42,9 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
 .item-card { display: flex; flex-direction: column; gap: 12px; }
 .item-header { display: flex; align-items: center; gap: 16px; }
-.item-img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: #f1f5f9; }
+.item-img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: var(--info-bg); }
 .item-name { font-size: 1.1rem; font-weight: 700; }
-.price-badge { background: #dcfce7; color: #16a34a; font-size: 0.8rem; padding: 2px 10px; border-radius: 10px; font-weight: 600; }
+.price-badge { background: var(--price-bg); color: var(--price-color); font-size: 0.8rem; padding: 2px 10px; border-radius: 10px; font-weight: 600; }
 .item-location { color: var(--text-light); font-size: 0.9rem; }
 
 .pixel-sprite {

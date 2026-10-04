@@ -59,13 +59,13 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .list-container { display: flex; flex-direction: column; gap: 16px; }
 .check-card { display: flex; align-items: flex-start; gap: 20px; cursor: pointer; }
 .check-card:hover { border-color: var(--primary); }
-.fish-img { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; background: #dbeafe; flex-shrink: 0; }
+.fish-img { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; background: var(--badge-bg); flex-shrink: 0; }
 .content { flex: 1; }
 .fish-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
 .content h3 { font-size: 1.1rem; }
 .content p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 4px; }
-.price { color: #16a34a; font-weight: 600; }
-.season-badge { background: #e0f2fe; color: #0284c7; font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; font-weight: 600; }
+.price { color: var(--price-color); font-weight: 600; }
+.season-badge { background: var(--badge-bg); color: var(--badge-color); font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; font-weight: 600; }
 
 .pixel-sprite {
   width: 16px;

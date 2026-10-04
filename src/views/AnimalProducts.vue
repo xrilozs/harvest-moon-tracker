@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="title">Telur, Susu, dan Wol</h1>
+    <h1 class="title">Peternakan</h1>
     <p class="subtitle">Cara mendapatkan produk hewan berkualitas tinggi.</p>
 
     <div class="collapsible-card">
@@ -16,10 +16,10 @@
     </div>
 
     <div class="tabs">
-      <button v-for="type in ['Egg', 'Milk', 'Wool', 'Makers']" :key="type" class="tab-btn" :class="{ active: currentType === type }" @click="currentType = type">{{ type === 'Egg' ? '🥚 Telur' : type === 'Milk' ? '🥛 Susu' : type === 'Wool' ? '🧶 Wol' : '⚙️ Mesin Maker' }}</button>
+      <button v-for="type in ['Egg', 'Milk', 'Wool', 'Mayonnaise', 'Cheese', 'Yarn']" :key="type" class="tab-btn" :class="{ active: currentType === type }" @click="currentType = type">{{ type === 'Egg' ? '🥚 Telur' : type === 'Milk' ? '🥛 Susu' : type === 'Wool' ? '🧶 Wol' : type === 'Mayonnaise' ? '🍶 Mayones' : type === 'Cheese' ? '🧀 Keju' : '🧶 Benang Rajut' }}</button>
     </div>
 
-    <div class="products-list" v-if="currentType !== 'Makers'">
+    <div class="products-list">
       <div v-for="product in filteredProducts" :key="product.id" class="card product-card">
         <div class="product-header">
           <template v-if="product.image.startsWith('sprite:')">
@@ -36,28 +36,15 @@
       </div>
     </div>
 
-    <div class="products-list" v-if="currentType === 'Makers'">
-      <div v-for="maker in makersData" :key="maker.id" class="card product-card">
-        <div class="product-header">
-          <img :src="maker.image" :alt="maker.name" class="product-img" @error="onImgError">
-          <div>
-            <h3>{{ maker.name }}</h3>
-            <span class="price-badge">Biaya: {{ maker.cost }} G</span>
-            <span class="quality-badge q-gold">Bahan: {{ maker.material }}</span>
-          </div>
-        </div>
-        <p class="how-to-get">{{ maker.description }}</p>
-      </div>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { ChevronDownIcon } from '@lucide/vue';
-import { animalProductsData, animalTips, makersData } from '../data/animalProducts';
+import { animalProductsData, animalTips } from '../data/animalProducts';
 
-const tipsOpen = ref(true);
+const tipsOpen = ref(false);
 const currentType = ref('Egg');
 const filteredProducts = computed(() => animalProductsData.filter(p => p.type === currentType.value));
 const qualityClass = (q: string) => ({ 'Small': 'q-small', 'Medium': 'q-medium', 'Large': 'q-large', 'Gold': 'q-gold', 'P': 'q-p', 'X': 'q-x' }[q] || '');
@@ -72,7 +59,7 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .tabs { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
 .tab-btn { background: var(--surface); border: 1px solid var(--border); padding: 10px 24px; border-radius: 24px; cursor: pointer; font-weight: 600; color: var(--text-light); transition: all 0.2s; font-family: inherit; }
 .tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-.products-list { display: flex; flex-direction: column; gap: 16px; }
+.products-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
 .product-card { display: flex; flex-direction: column; gap: 12px; }
 .product-header { display: flex; align-items: center; gap: 16px; }
 .product-img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: var(--note-bg); }

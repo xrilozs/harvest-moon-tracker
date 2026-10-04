@@ -74,7 +74,7 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .disliked { background: #dbeafe; color: #2563eb; }
 .hated { background: #1f2937; color: white; }
 .items-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
-.item-tag { background: #f8fafc; border: 1px solid var(--border); padding: 3px 10px; border-radius: 8px; font-size: 0.85rem; color: var(--text-main); }
+.item-tag { background: var(--info-bg); border: 1px solid var(--border); padding: 3px 10px; border-radius: 8px; font-size: 0.85rem; color: var(--text-main); }
 
 .pixel-sprite {
   width: 16px;

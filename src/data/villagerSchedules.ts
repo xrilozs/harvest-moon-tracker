@@ -1132,7 +1132,7 @@ export const villagerSchedulesData: VillagerSchedule[] = [
   {
     "id": "vs_cliff",
     "name": "Cliff",
-    "image": "https://fogu.com/hm4/img/peeps/cliff.gif",
+    "image": "https://static.wikia.nocookie.net/hmwikia/images/e/e6/Cliff_and_Cain.jpeg",
     "notes": "Sebelum dapat kerja: di Gereja. Setelah Fall 14: di Winery.",
     "regularDays": [
       {
@@ -3388,7 +3388,7 @@ export const villagerSchedulesData: VillagerSchedule[] = [
   {
     "id": "vs_lillia",
     "name": "Lillia",
-    "image": "https://fogu.com/hm4/img/peeps/lillia.gif",
+    "image": "https://static.wikia.nocookie.net/hmwikia/images/b/b5/Lillia_FoMT.png",
     "notes": "Sakit-sakitan, jarang keluar rumah.",
     "regularDays": [
       {

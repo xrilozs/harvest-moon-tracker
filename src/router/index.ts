@@ -6,7 +6,6 @@ import KingFish from '../views/KingFish.vue';
 import PowerBerries from '../views/PowerBerries.vue';
 import Jewels from '../views/Jewels.vue';
 import Ores from '../views/Ores.vue';
-import MineItems from '../views/MineItems.vue';
 import VillageEvents from '../views/VillageEvents.vue';
 import NpcEvents from '../views/NpcEvents.vue';
 import BacheloretteEvents from '../views/BacheloretteEvents.vue';
@@ -20,6 +19,7 @@ import VillagerSchedules from '../views/VillagerSchedules.vue';
 import MoneyGuide from '../views/MoneyGuide.vue';
 import TvQuiz from '../views/TvQuiz.vue';
 import Cottage from '../views/Cottage.vue';
+import SpecialItems from '../views/SpecialItems.vue';
 
 const routes = [
   { path: '/', component: Home },
@@ -29,7 +29,6 @@ const routes = [
   { path: '/power-berries', component: PowerBerries },
   { path: '/jewels', component: Jewels },
   { path: '/ores', component: Ores },
-  { path: '/mine-items', component: MineItems },
   { path: '/village-events', component: VillageEvents },
   { path: '/npc-events', component: NpcEvents },
   { path: '/bachelorette-events', component: BacheloretteEvents },
@@ -43,6 +42,7 @@ const routes = [
   { path: '/money-guide', component: MoneyGuide },
   { path: '/tv-quiz', component: TvQuiz },
   { path: '/cottage', component: Cottage },
+  { path: '/special-items', component: SpecialItems },
 ];
 
 export const router = createRouter({

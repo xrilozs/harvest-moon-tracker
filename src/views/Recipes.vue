@@ -32,7 +32,6 @@
           <img v-else :src="recipe.image"  :alt="recipe.name" class="recipe-img" @error="onImgError">
           <div class="recipe-title-box">
             <h3>{{ recipe.name }}</h3>
-            <span class="price-badge">{{ recipe.sellPrice }} G</span>
           </div>
         </div>
         <div class="recipe-details">
@@ -93,7 +92,6 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .recipe-img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: var(--note-bg); }
 .recipe-title-box { flex: 1; }
 .recipe-header h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
-.price-badge { background: var(--price-bg); color: var(--price-color); font-size: 0.8rem; padding: 2px 10px; border-radius: 10px; font-weight: 600; display: inline-block; }
 .recipe-details p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 6px; }
 .ingredients { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .ingredient-tag { background: var(--info-bg); border: 1px solid var(--border); padding: 3px 10px; border-radius: 8px; font-size: 0.85rem; color: var(--text-main); }

@@ -1,7 +1,7 @@
 export interface AnimalProduct {
   id: string;
   name: string;
-  type: 'Egg' | 'Milk' | 'Wool';
+  type: 'Egg' | 'Milk' | 'Wool' | 'Mayonnaise' | 'Cheese' | 'Yarn';
   quality: 'Small' | 'Medium' | 'Large' | 'Gold' | 'P' | 'X';
   sellPrice: number;
   howToGet: string;
@@ -32,22 +32,30 @@ export const animalProductsData: AnimalProduct[] = [
   { id: 'wool_g', name: 'Gold Wool', type: 'Wool', quality: 'Gold', sellPrice: 600, howToGet: 'Domba dengan kebahagiaan maksimum (10 hati) dan sudah menang di Sheep Festival.', image: '/img/items/GoldWool.svg' },
   { id: 'wool_p', name: 'P Wool', type: 'Wool', quality: 'P', sellPrice: 700, howToGet: 'Domba dengan 10 hati yang sudah menghasilkan Gold Wool secara konsisten.', image: '/img/items/PWool.svg' },
   { id: 'wool_x', name: 'X Wool', type: 'Wool', quality: 'X', sellPrice: 1000, howToGet: 'Domba generasi ke-2+ dengan induk P Wool dan kebahagiaan maksimum.', image: '/img/items/XWool.svg' },
-];
 
-export interface Maker {
-  id: string;
-  name: string;
-  type: string;
-  cost: number;
-  material: string;
-  description: string;
-  image: string;
-}
+  // === MAYONNAISE ===
+  { id: 'mayo_s', name: 'Mayonnaise (S)', type: 'Mayonnaise', quality: 'Small', sellPrice: 100, howToGet: 'Masukkan Egg (S) ke dalam Mayonnaise Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/6/6c/Mayonnaise_%28S%29.png' },
+  { id: 'mayo_m', name: 'Mayonnaise (M)', type: 'Mayonnaise', quality: 'Medium', sellPrice: 150, howToGet: 'Masukkan Egg (M) ke dalam Mayonnaise Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/4/44/Mayonnaise_%28M%29.png' },
+  { id: 'mayo_l', name: 'Mayonnaise (L)', type: 'Mayonnaise', quality: 'Large', sellPrice: 200, howToGet: 'Masukkan Egg (L) ke dalam Mayonnaise Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/0/01/Mayonnaise_%28L%29.png' },
+  { id: 'mayo_g', name: 'Mayonnaise (G)', type: 'Mayonnaise', quality: 'Gold', sellPrice: 300, howToGet: 'Masukkan Gold Egg ke dalam Mayonnaise Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/a/a5/Mayonnaise_%28G%29.png' },
+  { id: 'mayo_p', name: 'Mayonnaise (P)', type: 'Mayonnaise', quality: 'P', sellPrice: 450, howToGet: 'Masukkan P Egg ke dalam Mayonnaise Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/1/16/Mayonnaise_%28P%29.png' },
+  { id: 'mayo_x', name: 'Mayonnaise (X)', type: 'Mayonnaise', quality: 'X', sellPrice: 800, howToGet: 'Masukkan X Egg ke dalam Mayonnaise Maker, atau masak dengan Mayonnaise (S)+(M)+(L)+(G)+(P).', image: 'https://static.wikia.nocookie.net/hmwikia/images/f/f9/Mayonnaise_%28X%29.png' },
 
-export const makersData: Maker[] = [
-  { id: 'm_mayonnaise', name: 'Mayonnaise Maker', type: 'Egg', cost: 20000, material: 'Adamantite', description: 'Membuat Mayonnaise dari Telur. Bawa Adamantite ke Saibara dan bayar 20.000 G. Pembuatan memakan waktu 5 hari.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Mayonnaise_Maker.png' },
-  { id: 'm_cheese', name: 'Cheese Maker', type: 'Milk', cost: 20000, material: 'Adamantite', description: 'Membuat Cheese (Keju) dari Susu. Bawa Adamantite ke Saibara dan bayar 20.000 G. Pembuatan memakan waktu 5 hari.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Cheese_Maker.png' },
-  { id: 'm_yarn', name: 'Yarn Maker', type: 'Wool', cost: 20000, material: 'Adamantite', description: 'Membuat Yarn (Benang Rajut) dari Wol. Bawa Adamantite ke Saibara dan bayar 20.000 G. Pembuatan memakan waktu 5 hari.', image: 'https://harvestmoon.fandom.com/wiki/Special:FilePath/Yarn_Maker.png' }
+  // === CHEESE ===
+  { id: 'cheese_s', name: 'Cheese (S)', type: 'Cheese', quality: 'Small', sellPrice: 300, howToGet: 'Masukkan Milk (S) ke dalam Cheese Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/e/ea/Cheese_%28S%29_%28FoMT%29.png' },
+  { id: 'cheese_m', name: 'Cheese (M)', type: 'Cheese', quality: 'Medium', sellPrice: 400, howToGet: 'Masukkan Milk (M) ke dalam Cheese Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/3/3d/Cheese_%28M%29_%28FoMT%29.png' },
+  { id: 'cheese_l', name: 'Cheese (L)', type: 'Cheese', quality: 'Large', sellPrice: 500, howToGet: 'Masukkan Milk (L) ke dalam Cheese Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/3/33/Cheese_%28L%29_%28FoMT%29.png' },
+  { id: 'cheese_g', name: 'Cheese (G)', type: 'Cheese', quality: 'Gold', sellPrice: 600, howToGet: 'Masukkan Gold Milk ke dalam Cheese Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/2/29/Cheese_%28G%29_%28FoMT%29.png' },
+  { id: 'cheese_p', name: 'Cheese (P)', type: 'Cheese', quality: 'P', sellPrice: 750, howToGet: 'Masukkan P Milk ke dalam Cheese Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/8/87/Cheese_%28P%29_%28FoMT%29.png' },
+  { id: 'cheese_x', name: 'Cheese (X)', type: 'Cheese', quality: 'X', sellPrice: 1500, howToGet: 'Masukkan X Milk ke dalam Cheese Maker, atau masak dari Cheese (S)+(M)+(L)+(G)+(P).', image: 'https://static.wikia.nocookie.net/hmwikia/images/9/94/Cheese_%28X%29_%28FoMT%29.png' },
+
+  // === YARN ===
+  { id: 'yarn_s', name: 'Yarn (S)', type: 'Yarn', quality: 'Small', sellPrice: 300, howToGet: 'Masukkan Wool (S) ke dalam Yarn Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/9/9e/Yarn_%28S%29_%28FoMT%29.png' },
+  { id: 'yarn_m', name: 'Yarn (M)', type: 'Yarn', quality: 'Medium', sellPrice: 700, howToGet: 'Masukkan Wool (M) ke dalam Yarn Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/f/fb/Yarn_%28M%29_%28FoMT%29.png' },
+  { id: 'yarn_l', name: 'Yarn (L)', type: 'Yarn', quality: 'Large', sellPrice: 800, howToGet: 'Masukkan Wool (L) ke dalam Yarn Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/4/4b/Yarn_%28L%29_%28FoMT%29.png' },
+  { id: 'yarn_g', name: 'Yarn (G)', type: 'Yarn', quality: 'Gold', sellPrice: 1000, howToGet: 'Masukkan Gold Wool ke dalam Yarn Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/b/b3/Yarn_%28G%29_%28FoMT%29.png' },
+  { id: 'yarn_p', name: 'Yarn (P)', type: 'Yarn', quality: 'P', sellPrice: 1500, howToGet: 'Masukkan P Wool ke dalam Yarn Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/7/7b/Yarn_%28P%29_%28FoMT%29.png' },
+  { id: 'yarn_x', name: 'Yarn (X)', type: 'Yarn', quality: 'X', sellPrice: 4000, howToGet: 'Masukkan X Wool ke dalam Yarn Maker.', image: 'https://static.wikia.nocookie.net/hmwikia/images/e/e0/Yarn_%28X%29_%28FoMT%29.png' },
 ];
 
 export const animalTips = [
