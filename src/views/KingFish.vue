@@ -2,6 +2,10 @@
   <div>
     <h1 class="title">Raja Ikan (King Fish)</h1>
     <p class="subtitle">Tangkap ikan-ikan legendaris ini.</p>
+
+    <div class="info-banner">
+      <p>⚠️ <strong>Penting:</strong> Semua King Fish hanya bisa ditangkap menggunakan <strong>Pancingan (Fishing Rod) Level 5+</strong> (Cursed, Blessed, atau Mythic).</p>
+    </div>
     
     <div class="list-container">
       <label v-for="fish in kingFishData" :key="fish.id" class="card check-card">
@@ -56,6 +60,8 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 </script>
 
 <style scoped>
+.info-banner { background-color: var(--badge-bg); border-left: 4px solid var(--primary); padding: 12px 16px; border-radius: 4px; margin-bottom: 24px; }
+.info-banner p { margin: 0; color: var(--text-color); font-size: 0.95rem; line-height: 1.5; }
 .list-container { display: flex; flex-direction: column; gap: 16px; }
 .check-card { display: flex; align-items: flex-start; gap: 20px; cursor: pointer; }
 .check-card:hover { border-color: var(--primary); }
