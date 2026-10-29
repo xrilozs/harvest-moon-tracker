@@ -26,6 +26,7 @@
 
       <p class="nav-section">TAMBANG & JEWEL</p>
       <router-link to="/ores" class="nav-link" @click="sidebarOpen = false"><HammerIcon :size="18" /> Ores, Gems, Stones, dan Cursed Tools</router-link>
+      <router-link to="/tools" class="nav-link" @click="sidebarOpen = false"><PickaxeIcon :size="18" /> Upgrade Alat</router-link>
       <router-link to="/jewels" class="nav-link" @click="sidebarOpen = false"><GemIcon :size="18" /> Jewels</router-link>
 
       <p class="nav-section">WARGA & HADIAH</p>

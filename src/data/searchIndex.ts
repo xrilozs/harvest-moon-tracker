@@ -15,6 +15,7 @@ import { bacheloretteGiftsData } from './bacheloretteGifts';
 import { villageEventsData } from './villageEvents';
 import { bacheloretteEventsData } from './bacheloretteEvents';
 import { npcEventsData } from './npcEvents';
+import { toolsData } from './tools';
 
 export interface SearchItem {
   id: string;
@@ -31,6 +32,7 @@ export const searchIndex: SearchItem[] = [
   ...powerBerriesData.map(item => ({ id: `berry_${item.id}`, name: item.location, category: 'Power Berry', path: '/power-berries' })),
   ...oresData.map(item => ({ id: `ore_${item.id}`, name: item.name, category: 'Barang Tambang', path: '/ores' })),
   ...mineItemsData.map(item => ({ id: `mine_${item.id}`, name: item.name, category: 'Barang Tambang', path: '/ores' })),
+  ...toolsData.map(item => ({ id: `tool_${item.id}`, name: item.name, category: 'Upgrade Alat', path: '/tools' })),
   ...jewelsData.map(item => ({ id: `jewel_${item.id}`, name: item.name, category: 'Jewel', path: '/jewels' })),
   ...villagerProfilesData.map(item => ({ id: `vp_${item.id}`, name: item.name, category: 'Profil Warga', path: '/villager-profiles' })),
   ...kingFishData.map(item => ({ id: `fish_${item.id}`, name: item.name, category: 'Raja Ikan', path: '/king-fish' })),

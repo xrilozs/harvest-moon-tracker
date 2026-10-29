@@ -9,6 +9,8 @@ export const useProgressStore = defineStore('progress', {
     obtainedGifts: [] as string[],
     cookedRecipes: [] as string[],
     obtainedMysticBerry: false,
+    toolLevels: {} as Record<string, string>,
+    blessProgress: {} as Record<string, number>,
   }),
   actions: {
     togglePowerBerry(id: string) {
@@ -41,6 +43,12 @@ export const useProgressStore = defineStore('progress', {
       if (index > -1) this.cookedRecipes.splice(index, 1);
       else this.cookedRecipes.push(id);
     },
+    setToolLevel(toolId: string, levelId: string) {
+      this.toolLevels[toolId] = levelId;
+    },
+    setBlessProgress(toolId: string, value: number) {
+      this.blessProgress[toolId] = Math.max(0, value);
+    },
     resetAll() {
       this.collectedPowerBerries = [];
       this.collectedJewels = [];
@@ -49,6 +57,8 @@ export const useProgressStore = defineStore('progress', {
       this.obtainedGifts = [];
       this.cookedRecipes = [];
       this.obtainedMysticBerry = false;
+      this.toolLevels = {};
+      this.blessProgress = {};
     },
   },
   persist: true,

@@ -20,6 +20,7 @@ import MoneyGuide from '../views/MoneyGuide.vue';
 import TvQuiz from '../views/TvQuiz.vue';
 import Cottage from '../views/Cottage.vue';
 import SpecialItems from '../views/SpecialItems.vue';
+import Tools from '../views/Tools.vue';
 
 const routes = [
   { path: '/', component: Home },
@@ -29,6 +30,7 @@ const routes = [
   { path: '/power-berries', component: PowerBerries },
   { path: '/jewels', component: Jewels },
   { path: '/ores', component: Ores },
+  { path: '/tools', component: Tools },
   { path: '/village-events', component: VillageEvents },
   { path: '/npc-events', component: NpcEvents },
   { path: '/bachelorette-events', component: BacheloretteEvents },

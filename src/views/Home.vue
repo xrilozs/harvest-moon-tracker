@@ -72,6 +72,17 @@
           <div class="mini-bar"><div class="mini-fill indigo" :style="{ width: Math.min(store.obtainedGifts.length / 20 * 100, 100) + '%' }"></div></div>
         </div>
       </div>
+
+      <div class="card stat-card">
+        <div class="icon-bg purple-bg">
+          <PickaxeIcon :size="28" />
+        </div>
+        <div>
+          <h3>Alat Mythic</h3>
+          <p class="stat-value">{{ mythicTools }} / {{ toolsData.length }}</p>
+          <div class="mini-bar"><div class="mini-fill purple" :style="{ width: (mythicTools / toolsData.length * 100) + '%' }"></div></div>
+        </div>
+      </div>
     </div>
 
     <div class="card reset-card">
@@ -82,9 +93,12 @@
 </template>
 
 <script setup lang="ts">
-import { AppleIcon, GemIcon, FishIcon, CalendarIcon, GiftIcon, ChefHatIcon } from '@lucide/vue';
+import { computed } from 'vue';
+import { AppleIcon, GemIcon, FishIcon, CalendarIcon, GiftIcon, ChefHatIcon, PickaxeIcon } from '@lucide/vue';
 import { useProgressStore } from '../store/progress';
+import { toolsData } from '../data/tools';
 const store = useProgressStore();
+const mythicTools = computed(() => toolsData.filter(t => store.toolLevels[t.id] === 'mythic').length);
 const confirmReset = () => {
   if (confirm('Apakah kamu yakin ingin mereset SEMUA progres? Tindakan ini tidak bisa dibatalkan!')) {
     store.resetAll();
@@ -104,6 +118,8 @@ const confirmReset = () => {
 .icon-bg { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .pink-bg { background: #fce7f3; color: #ec4899; }
 .orange-bg { background: #ffedd5; color: #ea580c; }
+.purple-bg { background: #f3e8ff; color: #9333ea; }
+[data-theme="dark"] .purple-bg { background: #3b0764; color: #d8b4fe; }
 [data-theme="dark"] .pink-bg { background: #831843; color: #f9a8d4; }
 [data-theme="dark"] .orange-bg { background: #431407; color: #fb923c; }
 
@@ -116,6 +132,7 @@ h3 { color: var(--text-light); font-size: 0.75rem; text-transform: uppercase; le
 .mini-fill.green { background: #16a34a; }
 .mini-fill.pink { background: #ec4899; }
 .mini-fill.orange { background: #ea580c; }
+.mini-fill.purple { background: #9333ea; }
 
 .reset-card {
   margin-top: 40px;

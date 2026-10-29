@@ -25,13 +25,13 @@ export const upgradePathData = {
   steps: [
     {
       level: 'Cursed',
-      howToGet: 'Temukan Cursed Tool di Lake Mine (Winter Mine). Setiap alat ada di lantai tertentu: Cursed Hoe (Lantai 39), Cursed Axe (Lantai 49), Cursed Hammer (Lantai 59), Cursed Watering Can (Lantai 69), Cursed Fishing Rod (Lantai 29), Cursed Sickle (Lantai 79).',
-      note: 'Cursed Tool harus digunakan 255 kali agar bisa di-bless. Selama cursed, alat tidak bisa dilepas dari inventory!'
+      howToGet: 'Temukan Cursed Tool di Lake Mine (Winter Mine). Setiap alat ada di lantai tertentu: Cursed Fishing Rod (Lantai 29), Cursed Hoe (Lantai 39), Cursed Axe (Lantai 49), Cursed Hammer (Lantai 59), Cursed Watering Can (Lantai 69), Cursed Sickle (Lantai 79).',
+      note: 'Selama cursed, alat tidak bisa dilepas (unequip) sampai di-bless! Cursed Tool tidak menggantikan alat lama, jadi bawa alat seminimal mungkin.'
     },
     {
       level: 'Blessed',
-      howToGet: 'Setelah menggunakan Cursed Tool sebanyak 255 kali, bawa ke Carter di Gereja (Church). Dia akan memberkati (bless) alatmu.',
-      note: 'Alat sekarang bisa dilepas dan memiliki kekuatan yang sama tanpa efek negatif.'
+      howToGet: 'Cara bless berbeda tiap alat — Fishing Rod & Axe: gunakan 255 kali. Hoe & Watering Can: minta Carter di Gereja memberkati 10 kali (1.000G per sesi). Hammer & Sickle: bawa (equip) selama 10 hari.',
+      note: 'Kekuatan alat sama persis dengan versi cursed, tapi sekarang bisa dilepas. Tips: ayunkan Axe & Fishing Rod saat festival — tidak menguras stamina tapi tetap dihitung.'
     },
     {
       level: 'Mythic',
