@@ -21,6 +21,8 @@ import TvQuiz from '../views/TvQuiz.vue';
 import Cottage from '../views/Cottage.vue';
 import SpecialItems from '../views/SpecialItems.vue';
 import Tools from '../views/Tools.vue';
+import Accessories from '../views/Accessories.vue';
+import Credits from '../views/Credits.vue';
 
 const routes = [
   { path: '/', component: Home },
@@ -45,6 +47,8 @@ const routes = [
   { path: '/tv-quiz', component: TvQuiz },
   { path: '/cottage', component: Cottage },
   { path: '/special-items', component: SpecialItems },
+  { path: '/accessories', component: Accessories },
+  { path: '/credits', component: Credits },
 ];
 
 export const router = createRouter({

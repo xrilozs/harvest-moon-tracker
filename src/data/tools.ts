@@ -1,5 +1,3 @@
-import { mineItemsData } from './mineItems';
-
 export type ToolLevelId = 'basic' | 'copper' | 'silver' | 'gold' | 'mystrile' | 'cursed' | 'blessed' | 'mythic';
 
 export interface ToolLevel {
@@ -104,5 +102,6 @@ export const cursedToolTips: string[] = [
   'Jangan menaruh 2 alat Blessed/Mythic yang sama (mis. 2 Hammer) di satu slot Rucksack/Toolbox — keduanya akan menyatu selamanya kecuali salah satunya di-upgrade.',
 ];
 
-export const toolImage = (tool: Tool): string =>
-  mineItemsData.find(item => item.id === tool.cursedItemId)?.image ?? '';
+// Sprite per level: /img/tools/<id alat>_<id level>.png (khusus Cursed berformat .gif)
+export const toolImage = (tool: Tool, levelId: ToolLevelId): string =>
+  `/img/tools/${tool.id}_${levelId}.${levelId === 'cursed' ? 'gif' : 'png'}`;

@@ -112,7 +112,7 @@ export const tvQuizPrizesData: TvQuizPrize[] = [
   { streak: '15-19 benar', prize: 'Sunblock', description: 'Tabir surya. Bisa digunakan atau diberikan sebagai hadiah.' },
   { streak: '20-23 benar', prize: 'Skin Lotion', description: 'Losion kulit. Bisa digunakan atau diberikan sebagai hadiah.' },
   { streak: '24-29 benar', prize: 'Facial Pack', description: 'Masker wajah. Bisa digunakan atau diberikan sebagai hadiah untuk para wanita.' },
-  { streak: '30-39 benar', prize: 'Perfume', description: 'Parfum. Hadiah favorit para wanita. Salah satu cara mendapatkan Perfume selain Horse Race Medal.' },
+  { streak: '30-39 benar', prize: 'Perfume', description: 'Parfum. Hadiah favorit para wanita. Kuis TV adalah satu-satunya sumber Perfume — item ini tidak ada dalam daftar tukar Medal Horse Race.' },
   { streak: '40-49 benar', prize: 'Dress', description: 'Gaun cantik. Hadiah favorit beberapa wanita (Sasha, Manna, Lillia).' },
   { streak: '50-59 benar', prize: 'Golden Lumber', description: 'Kayu emas langka! Sangat berharga dan tidak bisa dibeli di toko.' },
   { streak: '60-69 benar', prize: 'Fossil of Ancient Fish', description: 'Fosil ikan kuno. Item koleksi yang sangat langka dan berharga.' },
@@ -135,10 +135,22 @@ export interface MoneyTip {
 export const moneyTipsData: MoneyTip[] = [
   // === SPRING ===
   {
-    id: 'mt_spring_turnip', season: 'Spring', title: 'Farming Turnip & Potato Massal',
-    income: '~5.000-15.000G / harvest', priority: 'high',
-    description: 'Turnip tumbuh 4 hari dan Potato 7 hari. Tanam sebanyak mungkin di awal Spring.',
-    steps: ['Beli biji Turnip dan Potato dari Supermarket', 'Bersihkan ladang sebanyak mungkin', 'Siram setiap hari', 'Jual semua hasil panen lewat Shipping Bin', 'Reinvestasi ke biji baru'],
+    id: 'mt_spring_strawberry', season: 'Spring', title: '🌟 Strawberry & Cucumber (Regrow)',
+    income: '~20.000-40.000G / season', priority: 'high',
+    description: 'Dua tanaman regrow terbaik di Spring. Strawberry panen ulang setiap 2 hari dan Cucumber setiap 5 hari, jadi sekali tanam bisa dipanen berkali-kali sampai akhir musim. Catatan: biji Strawberry belum dijual di awal permainan — harus dibuka dulu dengan mengirim 100 Turnip, 100 Potato, dan 100 Cucumber.',
+    steps: ['Buka dulu biji Strawberry: kirim 100 Turnip, 100 Potato, dan 100 Cucumber lewat Shipping Bin', 'Beli biji Cucumber (200G) dan Strawberry (150G) di Supermarket Jeff', 'Tanam di hari-hari pertama Spring (makin awal makin banyak panen)', 'Siram setiap hari, jangan sampai terlewat', 'Panen berulang tanpa perlu tanam ulang', 'Jual lewat Shipping Bin', 'Sisakan sebagian Cucumber untuk hadiah NPC dan resep masakan'],
+  },
+  {
+    id: 'mt_spring_cabbage', season: 'Spring', title: 'Cabbage untuk Harga Jual Tertinggi',
+    income: '~250G / buah', priority: 'medium',
+    description: 'Cabbage adalah tanaman Spring dengan harga jual satuan tertinggi (250G), tapi butuh 14 hari tumbuh dan tidak regrow. Hanya layak ditanam di awal musim. Bijinya hanya dijual Won, bukan Supermarket.',
+    steps: ['Beli biji Cabbage dari Won di gubuk pantai Zack (500G, buka 11.00-16.00)', 'Tanam paling lambat Spring 16 agar sempat panen', 'Siram setiap hari', 'Jual lewat Shipping Bin (250G each)'],
+  },
+  {
+    id: 'mt_spring_turnip', season: 'Spring', title: 'Turnip & Potato (Modal Kecil, Tahun Pertama)',
+    income: '~5.000-15.000G / harvest', priority: 'medium',
+    description: 'Ini langkah WAJIB di tahun pertama, bukan sekadar alternatif: mengirim 100 Turnip, 100 Potato, dan 100 Cucumber adalah syarat agar biji Strawberry muncul di Supermarket. Jadi tanam massal dulu di sini, baru pindah ke tanaman regrow.',
+    steps: ['Beli biji Turnip (120G), Potato (150G), dan Cucumber (200G) di Supermarket Jeff', 'Bersihkan ladang sebanyak mungkin', 'Siram setiap hari', 'Kirim semua hasil panen lewat Shipping Bin sampai masing-masing tembus 100 buah', 'Setelah terbuka, alihkan ladang ke Strawberry dan Cucumber'],
   },
   {
     id: 'mt_spring_bamboo', season: 'Spring', title: 'Kumpulkan Bamboo Shoot',

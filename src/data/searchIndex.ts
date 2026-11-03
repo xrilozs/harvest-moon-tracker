@@ -16,6 +16,7 @@ import { villageEventsData } from './villageEvents';
 import { bacheloretteEventsData } from './bacheloretteEvents';
 import { npcEventsData } from './npcEvents';
 import { toolsData } from './tools';
+import { accessoriesData } from './accessories';
 
 export interface SearchItem {
   id: string;
@@ -25,6 +26,7 @@ export interface SearchItem {
 }
 
 export const searchIndex: SearchItem[] = [
+  ...accessoriesData.map(item => ({ id: `acc_${item.id}`, name: item.name, category: 'Perhiasan & Permata', path: '/accessories' })),
   ...cropsData.map(item => ({ id: `crop_${item.id}`, name: item.name, category: 'Tanaman Kebun', path: '/crops' })),
   ...wildPlantsData.map(item => ({ id: `wild_${item.id}`, name: item.name, category: 'Tanaman Liar', path: '/wild-plants' })),
   ...animalProductsData.map(item => ({ id: `animal_${item.id}`, name: item.name, category: 'Produk Hewan', path: '/animal-products' })),

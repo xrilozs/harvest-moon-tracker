@@ -31,6 +31,11 @@
         </div>
 
         <p v-if="crop.recommendReason" class="recommend-reason">{{ crop.recommendReason }}</p>
+
+        <div class="how-to-get" :class="{ locked: crop.howToGet.startsWith('HARUS DIBUKA DULU') }">
+          <span class="how-label">🌱 Cara Dapat Biji</span>
+          <p>{{ crop.howToGet }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -55,6 +60,11 @@ const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https:/
 .crop-name { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
 .badge { background: var(--note-bg); color: var(--note-color); font-size: 0.75rem; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
 .recommend-reason { color: var(--reward-color); font-size: 0.85rem; background: var(--price-bg); padding: 8px 12px; border-radius: 8px; }
+.how-to-get { font-size: 0.85rem; background: var(--info-bg); padding: 10px 12px; border-radius: 8px; display: flex; flex-direction: column; gap: 4px; border-left: 3px solid var(--border); }
+.how-to-get p { color: var(--text-light); line-height: 1.5; }
+.how-label { font-weight: 700; font-size: 0.78rem; color: var(--text-main); }
+.how-to-get.locked { border-left-color: var(--accent); }
+.how-to-get.locked p { color: var(--text-main); }
 .crop-details { background: var(--info-bg); padding: 14px; border-radius: 12px; display: flex; flex-direction: column; gap: 6px; }
 .detail-item { display: flex; justify-content: space-between; font-size: 0.9rem; }
 .detail-item .label { color: var(--text-light); }

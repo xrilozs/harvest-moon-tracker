@@ -28,6 +28,7 @@
       <router-link to="/ores" class="nav-link" @click="sidebarOpen = false"><HammerIcon :size="18" /> Ores, Gems, Stones, dan Cursed Tools</router-link>
       <router-link to="/tools" class="nav-link" @click="sidebarOpen = false"><PickaxeIcon :size="18" /> Upgrade Alat</router-link>
       <router-link to="/jewels" class="nav-link" @click="sidebarOpen = false"><GemIcon :size="18" /> Jewels</router-link>
+      <router-link to="/accessories" class="nav-link" @click="sidebarOpen = false"><SparklesIcon :size="18" /> Perhiasan & Permata</router-link>
 
       <p class="nav-section">WARGA & HADIAH</p>
       <router-link to="/villager-profiles" class="nav-link" @click="sidebarOpen = false"><UserIcon :size="18" /> Profil Warga</router-link>
@@ -49,6 +50,7 @@
       <router-link to="/cottage" class="nav-link" @click="sidebarOpen = false"><HouseIcon :size="18" /> Rumah & Cottage</router-link>
       <router-link to="/tv-quiz" class="nav-link" @click="sidebarOpen = false"><TvIcon :size="18" /> Kuis TV</router-link>
       <router-link to="/special-items" class="nav-link" @click="sidebarOpen = false"><StarIcon :size="18" /> Special Items</router-link>
+      <router-link to="/credits" class="nav-link" @click="sidebarOpen = false"><InfoIcon :size="18" /> Kredit & Sumber</router-link>
     </nav>
   </aside>
 
@@ -77,6 +79,17 @@
       </button>
     </div>
     <router-view />
+
+    <footer class="site-footer">
+      <p>
+        Data dan gambar bersumber dari <a href="https://fogu.com/hm4/" target="_blank" rel="noopener noreferrer">fogu.com</a>
+        dan <a href="https://harvestmoon.fandom.com/wiki/Harvest_Moon:_Friends_of_Mineral_Town" target="_blank" rel="noopener noreferrer">Harvest Moon Wiki</a>.
+      </p>
+      <p>
+        Situs penggemar nonkomersial, tidak berafiliasi dengan Marvelous / Natsume.
+        <router-link to="/credits">Lihat kredit lengkap</router-link>
+      </p>
+    </footer>
   </main>
 </template>
 
@@ -86,7 +99,7 @@ import {
   HomeIcon, SproutIcon, LeafIcon, AppleIcon, GemIcon, FishIcon,
   CalendarIcon, UsersIcon, HeartIcon, GiftIcon, HeartHandshakeIcon,
   PackageIcon, ChefHatIcon, HammerIcon, PickaxeIcon, MilkIcon, MenuIcon,
-  SunIcon, MoonIcon, UserIcon, ClockIcon, CoinsIcon, TvIcon, BabyIcon, HouseIcon, StarIcon
+  SunIcon, MoonIcon, UserIcon, ClockIcon, CoinsIcon, TvIcon, BabyIcon, HouseIcon, StarIcon, InfoIcon, SparklesIcon
 } from '@lucide/vue';
 import { useThemeStore } from './store/theme';
 import GlobalSearch from './components/GlobalSearch.vue';
@@ -160,6 +173,31 @@ onMounted(() => {
   inset: 0;
   background: var(--overlay-bg);
   z-index: 199;
+}
+
+.site-footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.site-footer p {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.site-footer a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
 }
 
 .top-bar {

@@ -28,7 +28,19 @@
       <div v-for="tool in toolsData" :key="tool.id" class="card tool-card">
         <div class="tool-header">
           <div class="tool-title">
-            <img :src="toolImage(tool)" :alt="tool.name" class="tool-img" @error="onImgError">
+            <div class="tool-img-wrap">
+              <img
+                :key="displayLevel(tool).id"
+                :src="toolImage(tool, displayLevel(tool).id)"
+                :alt="`${tool.name} – ${displayLevel(tool).name}`"
+                class="tool-img"
+                :class="{ previewing: isPreviewing(tool) }"
+                @error="onImgError"
+              >
+              <span class="tool-img-caption" :class="{ previewing: isPreviewing(tool) }">
+                {{ isPreviewing(tool) ? 'Pratinjau: ' : '' }}{{ displayLevel(tool).name }}
+              </span>
+            </div>
             <h3>{{ tool.name }}</h3>
           </div>
           <span class="level-badge" :class="currentLevel(tool).id">Lv {{ currentLevel(tool).lv }} · {{ currentLevel(tool).name }}</span>
@@ -42,6 +54,10 @@
             :class="[levelById[levelId].id, { reached: isReached(tool, levelId), current: currentLevel(tool).id === levelId }]"
             :title="levelById[levelId].howToGet"
             @click="store.setToolLevel(tool.id, levelId)"
+            @mouseenter="previewed[tool.id] = levelId"
+            @mouseleave="previewed[tool.id] = null"
+            @focus="previewed[tool.id] = levelId"
+            @blur="previewed[tool.id] = null"
           >
             <span class="chip-lv">{{ levelById[levelId].lv }}</span>
             <span class="chip-name">{{ levelById[levelId].name }}</span>
@@ -93,11 +109,24 @@ const store = useProgressStore();
 const tipsOpen = ref(false);
 const onImgError = (e: Event) => { (e.target as HTMLImageElement).src = 'https://placehold.co/56x56/e2e8f0/64748b?text=Tool'; };
 
+// Level yang sedang di-hover pada deretan chip; null berarti tampilkan level tersimpan.
+const previewed = ref<Record<string, ToolLevelId | null>>({});
+
 const levelById = Object.fromEntries(toolLevels.map(l => [l.id, l])) as Record<ToolLevelId, ToolLevel>;
 
 const currentLevel = (tool: Tool): ToolLevel => {
   const id = store.toolLevels[tool.id] as ToolLevelId | undefined;
   return id && tool.levels.includes(id) ? levelById[id] : levelById.basic;
+};
+
+const isPreviewing = (tool: Tool) => {
+  const id = previewed.value[tool.id];
+  return !!id && id !== currentLevel(tool).id;
+};
+
+const displayLevel = (tool: Tool): ToolLevel => {
+  const id = previewed.value[tool.id];
+  return id && tool.levels.includes(id) ? levelById[id] : currentLevel(tool);
 };
 
 const isReached = (tool: Tool, levelId: ToolLevelId) => levelById[levelId].lv <= currentLevel(tool).lv;
@@ -144,7 +173,11 @@ const overallPercentage = computed(() => {
 .tool-card { display: flex; flex-direction: column; gap: 14px; }
 .tool-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
 .tool-title { display: flex; align-items: center; gap: 12px; }
-.tool-img { width: 48px; height: 48px; border-radius: 12px; object-fit: contain; background: var(--info-bg); image-rendering: pixelated; }
+.tool-img-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 60px; flex-shrink: 0; }
+.tool-img { width: 48px; height: 48px; border-radius: 12px; object-fit: contain; background: var(--info-bg); image-rendering: pixelated; padding: 6px; border: 1px solid transparent; transition: border-color 0.2s ease, background-color 0.2s ease; }
+.tool-img.previewing { border-color: var(--primary); background: var(--primary-light); }
+.tool-img-caption { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); text-align: center; line-height: 1.2; }
+.tool-img-caption.previewing { color: var(--primary); }
 .tool-header h3 { font-size: 1.1rem; font-weight: 700; }
 
 .level-badge { font-size: 0.75rem; padding: 3px 10px; border-radius: 8px; font-weight: 700; background: var(--surface-secondary); color: var(--text-main); }
