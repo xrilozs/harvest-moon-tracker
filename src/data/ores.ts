@@ -15,7 +15,7 @@ export const oresData: Ore[] = [
   { id: 'mystrile', name: 'Mystrile Ore', location: 'Spring Mine', floors: 'Lantai 5+', sellPrice: 40, usage: 'Upgrade alat ke level Mystrile. Biaya upgrade: 5.000G + 1 Mystrile Ore.', image: '/img/items/mystrile.png' },
   { id: 'orichalcum', name: 'Orichalcum', location: 'Spring Mine', floors: 'Lantai 10+ (langka)', sellPrice: 50, usage: 'Bahan untuk perhiasan dan hadiah. Bisa dijual ke Won.', image: '/img/items/orichalcum.gif' },
   { id: 'adamantite', name: 'Adamantite', location: 'Spring Mine', floors: 'Lantai 10+ (langka)', sellPrice: 50, usage: 'Bahan untuk perhiasan dan hadiah. Bisa dijual ke Won.', image: '/img/items/adamantite.gif' },
-  { id: 'mythic_stone', name: 'Mythic Stone', location: 'Lake Mine (Winter Mine)', floors: 'Lantai dalam (60+)', sellPrice: 20000, usage: 'Upgrade alat Blessed ke level Mythic. Biaya upgrade: 50.000G + 1 Mythic Stone.', image: '/img/items/mythic_stone.jpg' },
+  { id: 'mythic_stone', name: 'Mythic Stone', location: 'Lake Mine (Winter Mine)', floors: 'Lantai 60, 102, 123, 152, 155, 171, 190, 202, 222, dan 231-255', sellPrice: 20000, usage: 'Upgrade alat Blessed ke level Mythic. Biaya upgrade: 50.000G + 1 Mythic Stone. PENTING: Mythic Stone baru mulai muncul SETELAH SEMUA Cursed Tool di-bless - selama masih ada satu alat yang cursed, batu ini tidak akan keluar.', image: '/img/items/mythic_stone.jpg' },
   { id: 'junk_ore', name: 'Junk Ore', location: 'Spring Mine & Lake Mine', floors: 'Semua lantai', sellPrice: 1, usage: 'Tidak berguna. Bisa dijual atau dibuang.', image: '/img/items/junk_ore.png' },
 ];
 
